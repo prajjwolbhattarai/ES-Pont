@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 90" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&amp;display=swap');
+      .brand-title {
+        font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
+        font-weight: 400;
+        font-size: 64px;
+        fill: #2D2825;
+      }
+      .tilted-letter-o {
+        display: inline-block;
+        transform-box: fill-box;
+        transform-origin: center center;
+        transform: rotate(-18deg);
+      }
+    </style>
+  </defs>
+  <text y="66" class="brand-title">
+    <tspan x="10" letter-spacing="0.14em">ES</tspan>
+    <tspan x="180" letter-spacing="0.06em">P</tspan>
+    <tspan x="250" class="tilted-letter-o">O</tspan>
+    <tspan x="330" letter-spacing="0.12em">NT</tspan>
+  </text>
+</svg>
