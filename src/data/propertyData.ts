@@ -64,258 +64,331 @@ export const PROPERTY_DATA: PropertyDetails = {
 };
 
 // 36 PRECISE ORIGINAL MUSCACHE IMAGES EXTRACTED DIRECTLY FROM THE LISTING
+// Fully mapped with user's exact area, description, and image numbers (1-36)
 export const GALLERY_PHOTOS: PhotoItem[] = [
   {
     id: "p1",
+    imageNumber: 1,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/a580aefe-b244-4b44-bd0d-7619594d8ab6.jpeg",
-    alt: "Villa Es Pont private 10x5m swimming pool with sweeping views of Palma Bay and Cathedral",
+    alt: "Swimming pool at ES Pont with panoramic bay views",
     category: "exterior",
+    area: "Swimming Pool",
     caption: "The 10m × 5m private swimming pool and sun deck with sweeping panoramic views over Palma, the bay and the Cathedral."
   },
   {
     id: "p2",
+    imageNumber: 2,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/d411eac3-e1a1-4af2-a836-b4d0a1e94f40.jpeg",
-    alt: "Pool terrace and comfortable sun loungers",
-    category: "exterior",
-    caption: "Sun loungers by the crystal-clear pool, surrounded by mature Mediterranean palm and pine trees."
+    alt: "Indoor lounge at ES Pont",
+    category: "interior",
+    area: "Indoor Lounge",
+    caption: "Indoor lounge with comfortable seating and generous space for relaxing."
   },
   {
     id: "p3",
+    imageNumber: 3,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/56a124b2-1356-4bd1-8b97-10b47f97b69f.jpeg",
-    alt: "Upper panoramic terrace with outdoor dining and seating",
+    alt: "Basketball court at ES Pont",
     category: "exterior",
-    caption: "Elevated terrace lounge offering commanding perspectives across the Son Vida hills toward the Mediterranean sea."
+    area: "Basketball Court",
+    caption: "Private basketball court located directly on the 2,200 m² villa grounds."
   },
   {
     id: "p4",
+    imageNumber: 4,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/55e9a1c2-2f02-435b-838e-ce467ad23e15.jpeg",
-    alt: "Sun-drenched outdoor patio and relaxation space",
-    category: "exterior",
-    caption: "Authentic Spanish-style architectural terrace with natural stone balustrades and covered loggia."
+    alt: "Bedroom with 1 double bed or twin setup at ES Pont",
+    category: "bedrooms",
+    area: "Bedroom",
+    caption: "Bedroom with 1 double bed (or twin setup) offering peaceful garden orientation and tranquil comfort."
   },
   {
     id: "p5",
+    imageNumber: 5,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/acbf6e26-0a5a-4d4b-821c-b2af18cb1a10.jpeg",
-    alt: "Private basketball court within the 2,200 m² grounds",
-    category: "exterior",
-    caption: "Exclusive private basketball court located right on the property grounds for leisure and sports."
+    alt: "Bathroom with walk-in shower at ES Pont",
+    category: "interior",
+    area: "Bathroom",
+    caption: "Modern bathroom with full walk-in shower and premium amenities."
   },
   {
     id: "p6",
+    imageNumber: 6,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/b0893833-37d1-484e-844e-ed814b22af3e.jpeg",
-    alt: "Main living room with comfortable seating and fireplace",
-    category: "interior",
-    caption: "Spacious main living lounge featuring comfortable sofas, an indoor fireplace, and generous natural light."
+    alt: "Kitchen at ES Pont",
+    category: "kitchen",
+    area: "Kitchen",
+    caption: "Fully equipped kitchen with appliances and prep counter."
   },
   {
     id: "p7",
+    imageNumber: 7,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/a60d741f-4059-422e-9d6f-f1a1e611bc3a.png",
-    alt: "Living and dining space with garden vistas",
-    category: "interior",
-    caption: "Elegantly furnished interior living and dining areas connecting smoothly to outdoor sun terraces."
+    alt: "Outdoor area and walkway at ES Pont",
+    category: "exterior",
+    area: "Outdoor Area / Walkway",
+    caption: "Outdoor area and stone walkway winding across the Mediterranean grounds."
   },
   {
     id: "p8",
+    imageNumber: 8,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/0ba7a31e-1fdb-452c-9238-5b5ae62ea160.jpeg",
-    alt: "Fully equipped chef kitchen with modern appliances",
-    category: "kitchen",
-    caption: "Fully equipped kitchen complete with refrigerator, dishwasher, oven, stovetop, coffee maker, and prep space."
+    alt: "Hallway with terracotta tiles at ES Pont",
+    category: "interior",
+    area: "Hallway",
+    caption: "Interior hallway with Spanish architectural terracotta tiles."
   },
   {
     id: "p9",
+    imageNumber: 9,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/f6e58b7b-38df-4158-9373-bb912284466b.jpeg",
-    alt: "Master bedroom suite with king bed and balcony access",
-    category: "bedrooms",
-    caption: "Peaceful bedroom suite with quality bedding, private balcony access, and picturesque Son Vida views."
+    alt: "Bright hallway connecting villa suites at ES Pont",
+    category: "interior",
+    area: "Hallway",
+    caption: "Bright hallway connecting villa living spaces and suites."
   },
   {
     id: "p10",
+    imageNumber: 10,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/316fec02-4f6b-4b8d-9104-71d09ad760fd.jpeg",
-    alt: "Second bedroom with natural light and storage",
-    category: "bedrooms",
-    caption: "Double bedroom with individual climate control, crisp cotton linens, and built-in wardrobes."
+    alt: "Dining area at ES Pont",
+    category: "kitchen",
+    area: "Dining",
+    caption: "Indoor dining area setting for group meals and entertaining."
   },
   {
     id: "p11",
+    imageNumber: 11,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/509ffe73-d2bd-400b-ba3b-c248a133f16e.jpeg",
-    alt: "Twin bedroom ideal for guests and children",
-    category: "bedrooms",
-    caption: "Twin bedroom with comfortable single beds, reading lamps, and serene garden orientation."
+    alt: "Lounge with traditional fireplace at ES Pont",
+    category: "interior",
+    area: "Lounge with Fireplace",
+    caption: "Comfortable lounge featuring a traditional open fireplace."
   },
   {
     id: "p12",
+    imageNumber: 12,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/5296d5ac-c744-4a0f-8daa-6320399960a0.jpeg",
-    alt: "Fourth bedroom suite with garden outlook",
-    category: "bedrooms",
-    caption: "Spacious fourth bedroom offering flexible sleeping arrangements and quiet garden privacy."
+    alt: "Main salon lounge with fireplace and TV at ES Pont",
+    category: "interior",
+    area: "Lounge with Fireplace and TV",
+    caption: "Spacious main salon lounge with fireplace, television, and deep sofas."
   },
   {
     id: "p13",
+    imageNumber: 13,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/931b32d9-d11c-499c-af57-f2d4fc6c1600.jpeg",
-    alt: "Modern tiled bathroom with walk-in shower",
+    alt: "Cozy lounge corner with fireplace at ES Pont",
     category: "interior",
-    caption: "One of the four full bathrooms with walk-in shower, fresh towels, and complimentary essentials."
+    area: "Lounge with Fireplace",
+    caption: "Warm living lounge corner with fireplace and cozy seating."
   },
   {
     id: "p14",
+    imageNumber: 14,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/ff8f5a80-198c-44ce-9cfa-0aa405ac1d02.jpeg",
-    alt: "Second full bathroom with dual vanity",
-    category: "interior",
-    caption: "Well-appointed bathroom featuring full bathtub, vanity mirror, and plush bath sheets."
+    alt: "Balcony terrace with shade at ES Pont",
+    category: "exterior",
+    area: "Balcony with Shade",
+    caption: "Covered balcony terrace with cool shade and hillside views."
   },
   {
     id: "p15",
+    imageNumber: 15,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/d6e137ec-c831-412a-8be2-fb93577669a0.jpeg",
-    alt: "Outdoor barbecue dining area",
-    category: "exterior",
-    caption: "Dedicated barbecue station and outdoor dining setting for memorable evening family meals."
+    alt: "Interior corridor at ES Pont",
+    category: "interior",
+    area: "Hallway",
+    caption: "Interior corridor and passage connecting the bedrooms."
   },
   {
     id: "p16",
+    imageNumber: 16,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/f9209425-bc44-402b-9d82-b67a9d195bf1.jpeg",
-    alt: "Lush mature gardens and stone pathways",
-    category: "surroundings",
-    caption: "Beautifully landscaped grounds exceeding 2,200 m² with mature palms, flowering shrubs, and privacy."
+    alt: "Chef kitchen at ES Pont",
+    category: "kitchen",
+    area: "Kitchen",
+    caption: "Chef kitchen space with extensive cabinetry and food prep counters."
   },
   {
     id: "p17",
+    imageNumber: 17,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/2b61c4f2-35e7-49b4-98bb-a3056ded4603.jpeg",
-    alt: "Commanding views of Palma city and Mediterranean horizon",
-    category: "surroundings",
-    caption: "Spectacular sweeping views across Palma city skyline, Palma Bay, and the historic Cathedral."
+    alt: "Breakfast dining corner at ES Pont",
+    category: "kitchen",
+    area: "Breakfast Dining with Refrigerator",
+    caption: "Breakfast dining corner equipped with refrigerator and morning light."
   },
   {
     id: "p18",
+    imageNumber: 18,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/394fe604-d942-4fd6-8894-c8fb8641bcd0.jpeg",
-    alt: "Exterior facade and traditional Mallorcan architecture",
+    alt: "Outdoor barbecue grilling station at ES Pont",
     category: "exterior",
-    caption: "Grand Spanish-style villa facade showcasing classic Mallorcan terracotta tiles and stone craftsmanship."
+    area: "Outdoor Barbecue",
+    caption: "Outdoor barbecue grilling station for memorable al fresco dining."
   },
   {
     id: "p19",
+    imageNumber: 19,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/b97338ad-43fa-4271-bd3b-063ac4826962.jpeg",
-    alt: "Covered veranda and shaded afternoon lounge",
-    category: "exterior",
-    caption: "Shaded veranda terrace providing cool respite from the midday Mediterranean sun."
+    alt: "Hallway with built-in wardrobes at ES Pont",
+    category: "interior",
+    area: "Hallway with Wardrobe",
+    caption: "Spacious hallway featuring built-in wardrobes for storage."
   },
   {
     id: "p20",
+    imageNumber: 20,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/7907a0fd-05a9-42fb-8f8c-fbbee9e0d632.png",
-    alt: "Fifth bedroom with restful decor",
+    alt: "Bedroom with 1 queen bed at ES Pont",
     category: "bedrooms",
-    caption: "Additional private bedroom offering serene accommodations for extended families and friends."
+    area: "Bedroom",
+    caption: "Bedroom with 1 queen bed, crisp linens, and serene garden views."
   },
   {
     id: "p21",
+    imageNumber: 21,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/c00ad4b1-9a76-412d-aaa2-0083c8720b10.png",
-    alt: "Sixth bedroom / multi-use quiet room",
+    alt: "Perspective of the queen bedroom at ES Pont",
     category: "bedrooms",
-    caption: "Sixth versatile bedroom with ample wardrobe storage, air conditioning, and quiet garden outlook."
+    area: "Bedroom",
+    caption: "Perspective of the queen bedroom showing individual climate control and restful interior atmosphere."
   },
   {
     id: "p22",
+    imageNumber: 22,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/21b7f2b3-7f84-4155-a64d-dc8bf4e90ef8.jpeg",
-    alt: "Third full bathroom",
+    alt: "Full bathroom with clean fixtures and mirror at ES Pont",
     category: "interior",
-    caption: "Third full family bathroom with pristine vanity, mirrors, and walk-in shower."
+    area: "Bathroom",
+    caption: "Full bathroom with clean fixtures, mirror, and walk-in shower."
   },
   {
     id: "p23",
+    imageNumber: 23,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/18221ce2-e8c1-4093-afca-b3bf1c5c4df2.png",
-    alt: "Fourth bathroom and guest washroom",
-    category: "interior",
-    caption: "Fourth full bathroom convenient for both guests and poolside access."
+    alt: "Bedroom with private balcony access at ES Pont",
+    category: "bedrooms",
+    area: "Bedroom",
+    caption: "Bedroom with private balcony access and views over Son Vida."
   },
   {
     id: "p24",
+    imageNumber: 24,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/caf5e595-f16c-449c-8f89-3ec25ad6ba25.jpeg",
-    alt: "Gated entry driveway and private parking",
-    category: "exterior",
-    caption: "Private gated driveway and secure parking area accommodating multiple vehicles."
+    alt: "Perspective of bedroom with 1 double bed or twin setup at ES Pont",
+    category: "bedrooms",
+    area: "Bedroom",
+    caption: "Perspective of the bedroom with 1 double bed (or twin setup), featuring comfortable bedding and peaceful ambiance."
   },
   {
     id: "p25",
+    imageNumber: 25,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/054b3920-b41f-4668-b868-dfcc0c05e0db.png",
-    alt: "Poolside lounging deck and garden border",
+    alt: "Outdoor lounge with pool access at ES Pont",
     category: "exterior",
-    caption: "Sun deck alongside the freshwater swimming pool bordered by native Mediterranean flora."
+    area: "Outdoor Lounge with Pool Access",
+    caption: "Outdoor lounge terrace with direct steps leading to the swimming pool."
   },
   {
     id: "p26",
+    imageNumber: 26,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/0ef8fa43-e4e7-433c-8cbf-e91f2080eb7c.png",
-    alt: "Upper bedroom terrace with panoramic mountain views",
+    alt: "Bright double bedroom offering quiet privacy at ES Pont",
     category: "bedrooms",
-    caption: "Bedroom suite opening directly to private terrace with panoramic Son Vida hillside views."
+    area: "Bedroom",
+    caption: "Bright double bedroom offering quiet privacy."
   },
   {
     id: "p27",
+    imageNumber: 27,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/3facf5df-5788-4104-a53f-c3d5ab16ba53.png",
-    alt: "Interior dining table setting and glassware",
-    category: "kitchen",
-    caption: "Generous family dining table perfectly positioned for entertaining and group meals."
+    alt: "Bedroom with twin beds at ES Pont",
+    category: "bedrooms",
+    area: "Bedroom with Twin Beds",
+    caption: "Bedroom with twin single beds, ideal for guests, children, or friends."
   },
   {
     id: "p28",
+    imageNumber: 28,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/4bab215b-7d7d-4e0a-b43b-e87bd62096af.jpeg",
-    alt: "Mediterranean stone walkway and palm trees",
-    category: "surroundings",
-    caption: "Natural stone pathways winding through palm trees across the 2,200 m² private estate."
+    alt: "Freshwater swimming pool with sun loungers at ES Pont",
+    category: "exterior",
+    area: "Swimming Pool",
+    caption: "Crystal-clear 10m × 5m freshwater swimming pool surrounded by sun loungers."
   },
   {
     id: "p29",
+    imageNumber: 29,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/561ed09d-c1cd-43d6-a138-42726540852b.jpeg",
-    alt: "Sunny morning breakfast terrace",
+    alt: "Covered outdoor corridor at ES Pont",
     category: "exterior",
-    caption: "Peaceful morning patio ideal for breakfast with birdsong and gentle Mediterranean breeze."
+    area: "Outdoor Corridor",
+    caption: "Covered outdoor corridor connecting villa terraces and garden paths."
   },
   {
     id: "p30",
+    imageNumber: 30,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/86cb1ec1-b17f-4d78-835e-4bac1ef80ee0.jpeg",
-    alt: "Son Vida hillside and valley scenery",
-    category: "surroundings",
-    caption: "Serene surrounding mountain ridges and prestigious villas nestled in Son Vida."
+    alt: "Barbecue area near swimming pool at ES Pont",
+    category: "exterior",
+    area: "Barbecue Near Swimming Pool",
+    caption: "Al fresco barbecue grilling station situated conveniently near the swimming pool."
   },
   {
     id: "p31",
+    imageNumber: 31,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/8c993aec-f847-46a9-b3c7-41adbe713760.png",
-    alt: "Villa hallway and traditional tiled architectural details",
-    category: "interior",
-    caption: "Interior architectural features reflecting authentic Spanish estate craftsmanship."
+    alt: "Mature Mediterranean garden with sea views at ES Pont",
+    category: "surroundings",
+    area: "Garden with Sea View",
+    caption: "Mature Mediterranean garden with panoramic sea views over Palma Bay."
   },
   {
     id: "p32",
+    imageNumber: 32,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/c35b182c-179b-4a4d-8cc0-d93a20d73f88.png",
-    alt: "Upper floor sunset view point",
-    category: "surroundings",
-    caption: "Golden hour sunset perspectives stretching toward the horizon of Palma Bay."
+    alt: "Workout and fitness equipment at ES Pont",
+    category: "interior",
+    area: "Workout Equipment",
+    caption: "Dedicated workout and fitness equipment on premises."
   },
   {
     id: "p33",
+    imageNumber: 33,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/ef21c7e0-4d6f-4aba-8785-fd8cc6fd78cb.png",
-    alt: "Modern bathroom amenities and premium fixtures",
-    category: "interior",
-    caption: "Impeccably cleaned bathroom facilities with organic toiletries and rain shower head."
+    alt: "Private entrance gate and driveway at ES Pont",
+    category: "exterior",
+    area: "Entrance Gate",
+    caption: "Private secure gated entry and parking driveway."
   },
   {
     id: "p34",
+    imageNumber: 34,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/f1259678-2b7e-4090-9ca8-f6e4dfb566cb.jpeg",
-    alt: "Tranquil outdoor reading and lounge area",
-    category: "exterior",
-    caption: "Secluded garden corner offering shade and quiet contemplation under pine canopies."
+    alt: "Secluded garden corner under pine trees at ES Pont",
+    category: "surroundings",
+    area: "Secluded Garden Corner",
+    caption: "Quiet, secluded garden corner sheltered under mature pine canopies."
   },
   {
     id: "p35",
+    imageNumber: 35,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/fc13f15f-93e1-4d23-9ee0-c60b7621bca3.jpeg",
-    alt: "Elevated view of estate grounds and swimming pool",
+    alt: "Aerial perspective of swimming pool, basketball court and villa at ES Pont",
     category: "exterior",
-    caption: "Bird's-eye view over the private pool, basketball court, and Mediterranean villa structure."
+    area: "Bird's-Eye View of Pool, Basketball Court & Villa",
+    caption: "Spectacular bird's-eye perspective capturing the swimming pool, basketball court, and private villa grounds."
   },
   {
     id: "p36",
+    imageNumber: 36,
     url: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/fc9dc582-9bdd-4ccb-9085-2a575d83ebab.jpeg",
-    alt: "Twilight illuminated pool and evening ambiance",
+    alt: "Open sky over swimming pool and terrace at ES Pont",
     category: "exterior",
-    caption: "Atmospheric evening lighting around the pool terrace for magical summer nights under the stars."
+    area: "Open Sky with Pool",
+    caption: "Expansive open Mediterranean sky over the private swimming pool and sun terrace."
   }
 ];
 
@@ -381,142 +454,125 @@ export const AMENITIES_LIST: Amenity[] = [
 export const BEDROOMS_LIST: BedroomInfo[] = [
   {
     id: "b1",
-    name: "Master Suite",
-    bedType: "1 King Bed",
+    name: "Bedroom 1",
+    bedType: "Twin Beds (or Double setup)",
     capacity: "2 Guests",
-    description: "Grand master bedroom suite with sweeping vistas across Palma Bay, private terrace access, air conditioning, and generous en-suite dressing area.",
-    features: ["King size bed", "Panoramic bay & Cathedral view", "Air conditioning", "Private terrace access"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/f6e58b7b-38df-4158-9373-bb912284466b.jpeg"
+    description: "Bedroom with twin beds (configurable as a double bed) offering peaceful garden orientation and tranquil comfort.",
+    features: ["Twin Beds / Double setup", "Quiet garden orientation", "Air conditioning", "Adjacent bathroom access"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/55e9a1c2-2f02-435b-838e-ce467ad23e15.jpeg" // Image 4
   },
   {
     id: "b2",
-    name: "Double Bedroom 2",
+    name: "Bedroom 2",
     bedType: "1 Queen Bed",
     capacity: "2 Guests",
-    description: "Bright and serene double bedroom with built-in cedar wardrobes, individual air conditioning, and views of the mature Mediterranean gardens.",
-    features: ["Queen bed", "Garden & mountain hillside view", "Air conditioning", "Built-in wardrobes"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/316fec02-4f6b-4b8d-9104-71d09ad760fd.jpeg"
+    description: "Serene bedroom with 1 queen bed, crisp linens, peaceful garden orientation, and ample wardrobe storage.",
+    features: ["1 Queen bed", "Garden & mountain hillside view", "Air conditioning", "Built-in wardrobes"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/7907a0fd-05a9-42fb-8f8c-fbbee9e0d632.png" // Image 20
   },
   {
     id: "b3",
-    name: "Bedroom 3 (Twin / Family)",
-    bedType: "2 Single Beds",
+    name: "Bedroom 3",
+    bedType: "Twin Beds",
     capacity: "2 Guests",
-    description: "Comfortable twin room ideal for children or friends, featuring twin single beds, reading lights, and direct bathroom proximity.",
-    features: ["Two single beds", "Quiet garden orientation", "Reading lamps", "Air conditioning"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/509ffe73-d2bd-400b-ba3b-c248a133f16e.jpeg"
+    description: "Versatile bedroom furnished with twin single beds, ideal for guests, children, or friends.",
+    features: ["Twin single beds", "Quiet garden orientation", "Reading lamps", "Air conditioning"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/3facf5df-5788-4104-a53f-c3d5ab16ba53.png" // Image 27
   },
   {
     id: "b4",
     name: "Bedroom 4",
-    bedType: "1 Double Bed",
+    bedType: "1 Double Bed (Private Balcony)",
     capacity: "2 Guests",
-    description: "Spacious bedroom with traditional Spanish architectural charm, cool tiled floors, and abundant natural daylight.",
-    features: ["Double bed", "Quiet location", "Individual climate control", "Wardrobe space"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/5296d5ac-c744-4a0f-8daa-6320399960a0.jpeg"
+    description: "Bedroom with private balcony access and panoramic views over Son Vida.",
+    features: ["1 Double bed", "Private balcony access", "Panoramic views over Son Vida", "Air conditioning"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/18221ce2-e8c1-4093-afca-b3bf1c5c4df2.png" // Image 23
   },
   {
     id: "b5",
-    name: "Bedrooms 5 & 6",
-    bedType: "Flexible Double / Singles (Accommodating up to 10 guests)",
-    capacity: "2–4 Guests",
-    description: "Additional restful bedrooms ensuring ample space and supreme comfort for larger family gatherings, private golf retreats, or groups.",
-    features: ["Comfortable mattresses", "Fresh cotton linens", "High-speed Wi-Fi access", "Multiple adjacent bathrooms"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/7907a0fd-05a9-42fb-8f8c-fbbee9e0d632.png"
+    name: "Bedroom 5",
+    bedType: "1 Double Bed",
+    capacity: "2 Guests",
+    description: "Bright double bedroom offering quiet privacy and natural daylight.",
+    features: ["1 Double bed", "Natural daylight", "Air conditioning", "Adjacent bathroom access"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/0ef8fa43-e4e7-433c-8cbf-e91f2080eb7c.png" // Image 26
+  },
+  {
+    id: "b6",
+    name: "Bedroom 6",
+    bedType: "Twin Beds (or Double setup)",
+    capacity: "2 Guests",
+    description: "Bedroom with twin beds (configurable as a double bed), comfortable bedding, and quiet ambiance.",
+    features: ["Twin Beds / Double setup", "Comfortable mattresses", "Fresh cotton linens", "High-speed Wi-Fi access"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/caf5e595-f16c-449c-8f89-3ec25ad6ba25.jpeg" // Image 24
   }
 ];
 
 export const NEARBY_ATTRACTIONS: NearbyAttraction[] = [
   {
-    name: "Son Vida Championship Golf Course",
+    name: "Son Vida Golf",
     distance: "1.2 km",
     driveTime: "3 min drive",
-    description: "Mallorca's legendary 18-hole golf club with historic clubhouse, pro shop, and gourmet restaurant overlooking the greens.",
-    category: "dining"
+    description: "Mallorca's oldest and most prestigious 18-hole golf course, offering legendary fairways and clubhouse dining.",
+    category: "nature"
   },
   {
-    name: "Palma Historic Old Town & Cathedral La Seu",
+    name: "Son Muntaner & Son Quint Golf",
+    distance: "2.4 km",
+    driveTime: "5 min drive",
+    description: "Two premier championship 18-hole golf courses surrounded by olive groves and panoramic views.",
+    category: "nature"
+  },
+  {
+    name: "Palma Historic Old Town & Cathedral (La Seu)",
     distance: "5.5 km",
     driveTime: "10 min drive",
-    description: "Gothic cathedral, Royal Palace of La Almudaina, designer shopping along Passeig des Born, and tapas dining.",
+    description: "The Gothic masterpiece Cathedral of Santa Maria, ancient cobblestone alleys, artisan boutiques, and courtyards.",
     category: "village"
   },
   {
-    name: "Marina Port de Mallorca & Santa Catalina",
+    name: "Paseo Marítimo & Palma Marina",
     distance: "6.0 km",
-    driveTime: "11 min drive",
-    description: "Vibrant culinary quarter with lively market halls, waterfront promenade, superyacht marina, and cocktail bars.",
+    driveTime: "10 min drive",
+    description: "Vibrant seafront promenade lined with superyachts, waterfront cocktail bars, and Michelin-starred restaurants.",
     category: "dining"
   },
   {
-    name: "Illetes & Cala Major Sandy Beaches",
-    distance: "8.5 km",
-    driveTime: "14 min drive",
-    description: "Turquoise crystal waters, beach clubs, and sheltered sandy coves just west of Palma Bay.",
+    name: "Cala Major Beach",
+    distance: "7.8 km",
+    driveTime: "12 min drive",
+    description: "Golden sandy cove beach with crystal turquoise waters, sun loungers, and seaside seafood chiringuitos.",
     category: "beach"
   },
   {
-    name: "Palma de Mallorca Airport (PMI)",
+    name: "Palma International Airport (PMI)",
     distance: "16 km",
-    driveTime: "15 min drive",
-    description: "Direct fast connection via the Via de Cintura (Ma-20) highway to Mallorca's international airport.",
+    driveTime: "18 min drive",
+    description: "Fast highway connection to Mallorca's international airport with effortless rental car or private chauffeur transit.",
     category: "transport"
-  },
-  {
-    name: "Serra de Tramuntana Foothills & Valldemossa",
-    distance: "18 km",
-    driveTime: "20 min drive",
-    description: "UNESCO World Heritage mountain landscapes, olive terraces, and scenic winding roads towards Valldemossa and Deià.",
-    category: "nature"
   }
 ];
 
 export const DIRECT_BOOKING_PERKS = [
   {
-    title: "Best Rate Guarantee",
-    desc: "Save 15% to 20% compared to Airbnb & Booking.com by cutting out third-party platform service commissions."
+    title: "Best Rate Guaranteed",
+    desc: "Book directly without intermediary service charges or OTA portal markups.",
+    description: "Book directly without intermediary service charges or OTA portal markups."
   },
   {
-    title: "Zero Hidden Booking Fees",
-    desc: "Transparent all-inclusive pricing with no unexpected surprise service fees added at final checkout."
+    title: "Contactless Check-In",
+    desc: "Smart encrypted keybox arrival with host assistance whenever needed.",
+    description: "Smart encrypted keybox arrival with host assistance whenever needed."
   },
   {
-    title: "Direct Host Communication",
-    desc: "Liaise directly with your local property manager for personalized check-in and custom local island tips."
+    title: "Personal Host Contact",
+    desc: "Direct relationship for bespoke requests, golf reservations, and recommendations.",
+    description: "Direct relationship for bespoke requests, golf reservations, and recommendations."
   },
   {
-    title: "Flexible Rescheduling",
-    desc: "Enjoy relaxed cancellation up to 14 days before arrival and priority handling for date adjustments."
+    title: "Flexible Terms",
+    desc: "Full refund up to 14 days before arrival with straightforward communication.",
+    description: "Full refund up to 14 days before arrival with straightforward communication."
   }
 ];
 
-export const FAQS = [
-  {
-    q: "How does the direct booking process work?",
-    a: "Our integrated booking engine is powered by Smoobu, the official property management system for Villa Es Pont. Your dates are instantly synchronized across all booking channels with real-time availability and guaranteed lowest direct prices."
-  },
-  {
-    q: "Where is Villa Es Pont located?",
-    a: "The villa is situated in Son Vida, one of the most prestigious and secure residential areas in Palma de Mallorca. It offers tranquility, 24-hour security presence, and sweeping panoramic views over Palma city, Palma Bay, and the historic Cathedral, all within 10 minutes of central Palma."
-  },
-  {
-    q: "What time is check-in and check-out?",
-    a: "Check-in is from 16:00 to 24:00 (via self-check-in or in-person greeting). Check-out is by 10:00 AM to allow our professional housekeeping team to prepare the estate for arriving guests."
-  },
-  {
-    q: "Is a rental car recommended?",
-    a: "Yes, a car is recommended for maximum convenience, although central Palma and taxi services are only a short 10-minute drive away. The villa offers secure private parking on premises for multiple cars."
-  },
-  {
-    q: "What recreational features does the villa have?",
-    a: "In addition to the private 10m × 5m swimming pool, expansive sun deck, and barbecue dining area, the property boasts its own private basketball court on the 2,200 m² grounds."
-  },
-  {
-    q: "Are parties or events permitted?",
-    a: "No, parties and events are strictly not permitted. Villa Es Pont is located in a peaceful residential community and is reserved exclusively for families and mature groups seeking quiet relaxation."
-  },
-  {
-    q: "What is the official tourist license number?",
-    a: "The property is officially registered with the Balearic Tourism Authority under license number ETV/13085."
-  }
-];

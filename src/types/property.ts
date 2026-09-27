@@ -1,8 +1,10 @@
 export interface PhotoItem {
   id: string;
+  imageNumber?: number;
   url: string;
   alt: string;
   category: 'exterior' | 'interior' | 'bedrooms' | 'kitchen' | 'surroundings';
+  area?: string;
   caption: string;
 }
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { GALLERY_PHOTOS } from '../data/propertyData';
-import { PhotoItem } from '../types/property';
 import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles, ZoomIn, ZoomOut } from 'lucide-react';
 
 interface PhotoGalleryProps {
@@ -14,25 +13,23 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 }) => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(true); // default to showing all so user can review all 36 easily!
   const [isZoomed, setIsZoomed] = useState<boolean>(false);
 
   const categories = [
     { id: 'all', label: `All Photos (${GALLERY_PHOTOS.length})` },
-    { id: 'exterior', label: 'Pool & Terraces' },
-    { id: 'interior', label: 'Living Areas' },
+    { id: 'exterior', label: 'Pool, Terraces & Sports' },
+    { id: 'interior', label: 'Lounges, Hallways & Bathrooms' },
     { id: 'bedrooms', label: 'Bedrooms' },
     { id: 'kitchen', label: 'Kitchen & Dining' },
-    { id: 'surroundings', label: 'Views & Grounds' }
+    { id: 'surroundings', label: 'Gardens & Views' }
   ];
 
   const categoryPhotos = activeCategory === 'all'
     ? GALLERY_PHOTOS
     : GALLERY_PHOTOS.filter((p) => p.category === activeCategory);
 
-  // Initial display: 6 photos (2 complete 3-column rows of identical size) or all when expanded
-  const initialDisplayCount = 6;
-  const visiblePhotos = isExpanded ? categoryPhotos : categoryPhotos.slice(0, initialDisplayCount);
+  const visiblePhotos = isExpanded ? categoryPhotos : categoryPhotos.slice(0, 12);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -99,25 +96,27 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
         {/* Section Header with GFS Didot Typography */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <div className="text-xs uppercase tracking-widest text-[#C59B4D] font-semibold mb-2 flex items-center gap-1.5 font-sans-clean">
+            <div className="text-xs uppercase tracking-widest text-[#C59B4D] font-semibold mb-2 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Property Gallery · All Airbnb & Direct Images</span>
+              <span>Complete Photographic Tour</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-light tracking-tight text-[#2D2825]">
-              Capturing Villa Es Pont
+              Capturing ES PONT
             </h2>
-            <p className="text-sm sm:text-base text-[#5C554E] mt-2 font-light max-w-xl font-sans-clean">
-              Explore all {GALLERY_PHOTOS.length} original photographs: private swimming pool, sun-drenched stone terraces, tranquil bedroom suites, and panoramic views over Palma.
+            <p className="text-sm sm:text-base text-[#5C554E] mt-2 font-light max-w-2xl">
+              Explore the private villa, sun terraces, suites, and secluded Mediterranean grounds.
             </p>
           </div>
 
-          <button
-            onClick={() => openLightbox(0)}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[#E8E2D8] bg-white hover:bg-[#F4EFEB] text-[#2D2825] text-xs font-semibold uppercase tracking-wider transition-colors shadow-xs self-start md:self-auto cursor-pointer"
-          >
-            <Maximize2 className="w-3.5 h-3.5 text-[#C59B4D]" />
-            <span>Open Fullscreen Gallery ({GALLERY_PHOTOS.length})</span>
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => openLightbox(0)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[#E8E2D8] bg-white hover:bg-[#F4EFEB] text-[#2D2825] text-xs font-semibold uppercase tracking-wider transition-colors shadow-xs cursor-pointer"
+            >
+              <Maximize2 className="w-3.5 h-3.5 text-[#C59B4D]" />
+              <span>Open Lightbox</span>
+            </button>
+          </div>
         </div>
 
         {/* Filter Tabs */}
@@ -128,52 +127,51 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
               onClick={() => {
                 setActiveCategory(cat.id);
               }}
-              className={`px-4 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors cursor-pointer font-sans-clean ${
+              className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-colors cursor-pointer ${
                 activeCategory === cat.id
                   ? 'bg-[#2D2825] text-white shadow-xs'
                   : 'bg-white hover:bg-[#F4EFEB] text-[#5C554E] border border-[#E8E2D8]'
               }`}
             >
-              {cat.label}
+              {cat.id === 'all' ? 'All Photos' : cat.label}
             </button>
           ))}
         </div>
 
-        {/* Uniform Grid: Every single image card has the exact same size and placement */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        {/* Uniform Grid: Clean Images with Description Underneath */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visiblePhotos.map((photo, index) => {
+            const originalIndex = GALLERY_PHOTOS.findIndex((p) => p.id === photo.id);
+
             return (
               <div
                 key={photo.id}
-                onClick={() => {
-                  const originalIndex = GALLERY_PHOTOS.findIndex((p) => p.id === photo.id);
-                  openLightbox(originalIndex !== -1 ? originalIndex : index);
-                }}
-                className="group relative overflow-hidden rounded-2xl bg-white border border-[#E8E2D8] aspect-[4/3] cursor-pointer shadow-xs hover:shadow-md transition-all duration-300"
+                className="group rounded-2xl bg-white border border-[#E8E2D8] overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col"
               >
-                <img
-                  src={photo.url}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
-                  loading={index < 6 ? 'eager' : 'lazy'}
-                  referrerPolicy="no-referrer"
-                />
+                {/* Image Container */}
+                <div
+                  onClick={() => openLightbox(originalIndex !== -1 ? originalIndex : index)}
+                  className="relative aspect-[4/3] overflow-hidden cursor-pointer bg-[#F4EFEB]"
+                >
+                  <img
+                    src={photo.url}
+                    alt={photo.alt}
+                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                    loading={index < 6 ? 'eager' : 'lazy'}
+                    referrerPolicy="no-referrer"
+                  />
 
-                {/* Clean Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#26211D]/80 via-[#26211D]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-5 text-white">
-                  <div className="flex items-end justify-between gap-2">
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider text-[#EED8B3] block mb-0.5 font-sans-clean font-medium">
-                        {photo.category}
-                      </span>
-                      <h3 className="text-xs sm:text-sm font-serif-luxury font-light text-white line-clamp-2">
-                        {photo.caption}
-                      </h3>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white shrink-0">
-                      <Maximize2 className="w-3.5 h-3.5" />
-                    </div>
+                  {/* Expand icon on hover */}
+                  <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-[#2D2825]/75 backdrop-blur-xs text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Maximize2 className="w-3.5 h-3.5" />
                   </div>
+                </div>
+
+                {/* Text Underneath: Only Description */}
+                <div className="p-4 bg-white border-t border-[#F4EFEB] flex-1 flex flex-col justify-center">
+                  <p className="text-xs sm:text-[13px] text-[#4A433D] font-light leading-relaxed">
+                    {photo.caption}
+                  </p>
                 </div>
               </div>
             );
@@ -181,7 +179,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
         </div>
 
         {/* Show More / Show Less Toggle Button */}
-        {categoryPhotos.length > initialDisplayCount && (
+        {categoryPhotos.length > 12 && (
           <div className="mt-10 text-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
@@ -189,8 +187,8 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
             >
               <span>
                 {isExpanded
-                  ? 'Show fewer photos'
-                  : `Show more photos (${categoryPhotos.length - visiblePhotos.length} more)`}
+                  ? 'Show preview rows (12 photos)'
+                  : `Show all ${categoryPhotos.length} photos`}
               </span>
             </button>
           </div>
@@ -203,10 +201,14 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
           
           {/* Lightbox Top Bar */}
           <div className="flex items-center justify-between px-4 sm:px-6 py-4 text-stone-200 border-b border-stone-800">
-            <div className="text-xs sm:text-sm font-medium tracking-wide font-sans-clean">
-              <span className="font-semibold text-white">Photo {lightboxIndex + 1} of {GALLERY_PHOTOS.length}</span>
-              <span className="mx-2 text-stone-500">·</span>
-              <span className="text-[#D8B475] uppercase text-[11px] tracking-wider">{GALLERY_PHOTOS[lightboxIndex].category}</span>
+            <div className="text-xs sm:text-sm font-medium tracking-wide">
+              <span className="font-serif-luxury text-base text-stone-200 tracking-wider">
+                ES PONT
+              </span>
+              <span className="mx-2 text-stone-600">·</span>
+              <span className="text-[#D8B475] uppercase text-[11px] tracking-wider">
+                Son Vida, Mallorca
+              </span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -273,9 +275,11 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 
           {/* Bottom Caption and Thumbnails */}
           <div className="px-4 sm:px-6 py-3.5 bg-stone-950/90 border-t border-stone-800/80 text-stone-300">
-            <p className="text-center text-xs sm:text-sm font-light text-stone-200 max-w-3xl mx-auto mb-2.5 font-sans-clean">
-              {GALLERY_PHOTOS[lightboxIndex].caption}
-            </p>
+            <div className="text-center max-w-3xl mx-auto mb-2.5">
+              <p className="text-xs sm:text-sm font-light text-stone-200 leading-relaxed">
+                {GALLERY_PHOTOS[lightboxIndex].caption}
+              </p>
+            </div>
 
             {/* Thumbnail Ribbon for all photos */}
             <div className="hidden sm:flex items-center justify-center gap-1.5 overflow-x-auto max-w-5xl mx-auto pb-1 no-scrollbar">
