@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, CheckCircle2, Mail, Phone } from 'lucide-react';
+import { X, Send, CheckCircle2, Mail, Phone, Loader2, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface HostContactModalProps {
@@ -9,6 +9,8 @@ interface HostContactModalProps {
 
 export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onClose }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
@@ -22,13 +24,56 @@ export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onCl
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '685b9be2-922c-4720-86ac-33b4bd9b7ffe',
+          subject: `New Villa Es Pont Inquiry from ${formData.name}`,
+          from_name: 'Villa Es Pont Inquiry Form',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          check_in: formData.checkIn || 'Flexible / Not specified',
+          check_out: formData.checkOut || 'Flexible / Not specified',
+          guests: `${formData.guests} ${Number(formData.guests) === 1 ? guestSingleLabel : guestLabel}`,
+          message: formData.message || 'Direct reservation inquiry from website.',
+          botcheck: '',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormSubmitted(true);
+      } else {
+        setErrorMessage(data.message || 'Failed to submit inquiry. Please try again or email us directly.');
+      }
+    } catch {
+      setErrorMessage(
+        language === 'es'
+          ? 'Error al enviar el mensaje. Por favor, contáctenos directamente por correo o teléfono.'
+          : language === 'de'
+          ? 'Fehler beim Senden der Anfrage. Bitte kontaktieren Sie uns direkt per E-Mail oder Telefon.'
+          : 'Failed to send inquiry. Please contact us directly by email or phone.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
     setFormSubmitted(false);
+    setErrorMessage(null);
     setFormData({
       name: '',
       email: '',
@@ -93,6 +138,25 @@ export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onCl
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Spam Honeypot for Web3Forms */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
+              {errorMessage && (
+                <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start gap-2 font-sans-clean">
+                  <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <span>{errorMessage}</span>
+                  </div>
+                </div>
+              )}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-[#2D2825] mb-1 font-sans-clean">
@@ -122,7 +186,38 @@ export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onCl
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-[#2D2825] mb-1 font-sans-clean">
+                    {t.contactModal.phoneLabel}
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder={t.contactModal.phonePlaceholder}
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#E8E2D8] text-sm focus:outline-none focus:ring-2 focus:ring-[#C59B4D] focus:border-[#C59B4D] bg-[#FAF7F2] font-sans-clean"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-[#2D2825] mb-1 font-sans-clean">
+                    {t.contactModal.guestsLabel}
+                  </label>
+                  <select
+                    value={formData.guests}
+                    onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#E8E2D8] text-sm focus:outline-none focus:ring-2 focus:ring-[#C59B4D] bg-[#FAF7F2] font-sans-clean"
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                      <option key={num} value={num}>
+                        {num} {num === 1 ? guestSingleLabel : guestLabel}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-[#2D2825] mb-1 font-sans-clean">
                     {t.contactModal.checkinLabel}
@@ -145,22 +240,6 @@ export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onCl
                     className="w-full px-3 py-2 rounded-xl border border-[#E8E2D8] text-xs focus:outline-none focus:ring-2 focus:ring-[#C59B4D] bg-[#FAF7F2] font-sans-clean"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-[#2D2825] mb-1 font-sans-clean">
-                    {t.contactModal.guestsLabel}
-                  </label>
-                  <select
-                    value={formData.guests}
-                    onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#E8E2D8] text-xs focus:outline-none focus:ring-2 focus:ring-[#C59B4D] bg-[#FAF7F2] font-sans-clean"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                      <option key={num} value={num}>
-                        {num} {num === 1 ? guestSingleLabel : guestLabel}
-                      </option>
-                    ))}
-                  </select>
-                </div>
               </div>
 
               <div>
@@ -179,10 +258,22 @@ export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onCl
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-[#C59B4D] hover:bg-[#B48B3D] text-white font-medium text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer font-sans-clean"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 rounded-xl bg-[#C59B4D] hover:bg-[#B48B3D] disabled:opacity-75 disabled:cursor-not-allowed text-white font-medium text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer font-sans-clean"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>{t.contactModal.submitBtn}</span>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>
+                        {language === 'es' ? 'Enviando consulta...' : language === 'de' ? 'Anfrage wird gesendet...' : 'Sending Inquiry...'}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>{t.contactModal.submitBtn}</span>
+                    </>
+                  )}
                 </button>
               </div>
             </form>
