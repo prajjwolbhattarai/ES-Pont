@@ -1,0 +1,111 @@
+import React from 'react';
+import { Calendar, Image as ImageIcon, MapPin, Users, Bed, Bath, Waves, Sparkles, CheckCircle2 } from 'lucide-react';
+import { PROPERTY_DATA } from '../data/propertyData';
+import { EsPontBrandLogo } from './EsPontBrandLogo';
+
+interface HeroProps {
+  onOpenBooking: () => void;
+  onOpenGallery: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
+  return (
+    <section className="relative min-h-[92vh] lg:min-h-screen flex items-end justify-start overflow-hidden bg-[#2D2825]">
+      {/* Background Hero Image with Warm Scrim */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/a580aefe-b244-4b44-bd0d-7619594d8ab6.jpeg"
+          alt="Villa Es Pont exterior, 10x5m swimming pool and sweeping views over Palma Bay and Cathedral"
+          className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out"
+          referrerPolicy="no-referrer"
+          loading="eager"
+        />
+        {/* Warm Golden Hour Pastel Scrim */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#26211D]/90 via-[#26211D]/60 to-[#26211D]/30" />
+      </div>
+
+      {/* Hero Content Container */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-24">
+        {/* Clean Kicker / Location */}
+        <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm tracking-widest uppercase font-medium text-[#EED8B3] mb-3">
+          <MapPin className="w-3.5 h-3.5 text-[#C59B4D]" />
+          <span>Carrer Marola 4, Son Vida</span>
+          <span aria-hidden="true" className="text-[#D5C7B7]">·</span>
+          <span>Palma, Mallorca, Spain</span>
+          <span aria-hidden="true" className="text-[#D5C7B7]">·</span>
+          <span className="text-[#7CB88F] flex items-center gap-1 font-semibold">
+            <CheckCircle2 className="w-3.5 h-3.5" /> Direct Booking Best Price
+          </span>
+        </div>
+
+        {/* Property Title with Exact Brand Logo Image */}
+        <div className="mb-5">
+          <div className="mb-2">
+            <EsPontBrandLogo size="hero" colorScheme="gold" />
+          </div>
+          <span className="text-xs sm:text-sm tracking-[0.25em] font-light text-[#EED8B3] uppercase block font-sans-clean">
+            LUXURY PRIVATE ESTATE · SON VIDA, MALLORCA
+          </span>
+        </div>
+
+        {/* Subtitle / Value Proposition */}
+        <p className="text-base sm:text-xl text-[#F2ECE4] font-light max-w-3xl leading-relaxed mb-8">
+          A private Spanish-style villa in prestigious Son Vida with sweeping views over Palma, the bay and the Cathedral, featuring a 10 × 5 m pool, basketball court and 2,200 m² of secluded grounds.
+        </p>
+
+        {/* Key Property Specs Row (Warm Pastel Glass) */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mb-8 p-3.5 sm:p-4 rounded-2xl bg-[#FAF7F2]/90 backdrop-blur-md border border-[#E8E2D8] text-[#2D2825] shadow-sm">
+          <div className="flex items-center gap-2.5">
+            <Users className="w-4 h-4 text-[#C59B4D] shrink-0" />
+            <div className="text-xs sm:text-sm font-sans-clean">
+              <span className="font-semibold text-[#2D2825]">Up to 10</span> Guests
+            </div>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <Bed className="w-4 h-4 text-[#C59B4D] shrink-0" />
+            <div className="text-xs sm:text-sm font-sans-clean">
+              <span className="font-semibold text-[#2D2825]">6</span> Bedrooms
+            </div>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <Bath className="w-4 h-4 text-[#C59B4D] shrink-0" />
+            <div className="text-xs sm:text-sm font-sans-clean">
+              <span className="font-semibold text-[#2D2825]">4</span> Bathrooms
+            </div>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <Waves className="w-4 h-4 text-[#C59B4D] shrink-0" />
+            <div className="text-xs sm:text-sm font-sans-clean">
+              <span className="font-semibold text-[#2D2825]">10m × 5m</span> Pool
+            </div>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 max-w-md sm:max-w-none">
+          <button
+            onClick={onOpenBooking}
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-[#C59B4D] hover:bg-[#B48B3D] text-white font-medium text-sm tracking-wider uppercase transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+          >
+            <Calendar className="w-4 h-4" />
+            <span>Check Availability & Book Direct</span>
+          </button>
+
+          <button
+            onClick={onOpenGallery}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FAF7F2]/20 hover:bg-[#FAF7F2]/30 text-white font-medium text-sm tracking-wider uppercase border border-white/30 backdrop-blur-md transition-all cursor-pointer"
+          >
+            <ImageIcon className="w-4 h-4 text-[#EED8B3]" />
+            <span>View Photo Gallery (36)</span>
+          </button>
+        </div>
+
+        {/* Direct Booking Best Price Guarantee Note */}
+        <div className="mt-6 flex items-center gap-2 text-xs text-[#E8DFD5] font-light font-sans-clean">
+          <Sparkles className="w-3.5 h-3.5 text-[#C59B4D]" />
+          <span>Direct host booking with official Best Price Guarantee, instant confirmation & no third-party platform markups.</span>
+        </div>
+      </div>
+    </section>
+  );
+};

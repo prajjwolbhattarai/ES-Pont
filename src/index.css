@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
+    --font-sans: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
+    --brand-gold: #D8B475;
+    --pastel-bg: #FAF7F2;
+    --pastel-card: #FFFFFF;
+    --pastel-surface: #F4EFEB;
+    --pastel-border: #E8E2D8;
+    --text-primary: #2D2825;
+    --text-secondary: #5C554E;
+  }
+
+  *, *::before, *::after {
+    font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+  }
+
+  html, body {
+    background-color: var(--pastel-bg);
+    color: var(--text-primary);
+    font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select, label, div {
+    font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+  }
+}
+
+.font-brand-espont {
+  font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.font-serif-luxury {
+  font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+}
+
+.font-sans-clean {
+  font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+}
+
+.bg-pastel-bg {
+  background-color: #FAF7F2;
+}
+
+.bg-pastel-surface {
+  background-color: #F4EFEB;
+}
+
+.border-pastel {
+  border-color: #E8E2D8;
+}
+
+.text-espresso {
+  color: #2D2825;
+}
+
+.text-warm-stone {
+  color: #5C554E;
+}
+
+.text-brand-gold {
+  color: #C59B4D;
+}
+
+.bg-brand-gold {
+  background-color: #C59B4D;
+}
+
+.border-brand-gold {
+  border-color: #C59B4D;
+}
+
+/* Hide scrollbars for clean tab navigation */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

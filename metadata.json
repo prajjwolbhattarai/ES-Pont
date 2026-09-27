@@ -1,0 +1,6 @@
+{
+  "name": "Villa Es Pont - Luxury Villa in Mallorca",
+  "description": "Private Spanish-style villa in prestigious Son Vida, Palma with 10x5m pool, bay views, 6 bedrooms, and seamless direct booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
