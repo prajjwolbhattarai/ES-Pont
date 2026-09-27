@@ -1,7 +1,7 @@
 import React from 'react';
 import { Calendar, Image as ImageIcon, MapPin, Users, Bed, Bath, Waves, Sparkles, CheckCircle2 } from 'lucide-react';
-import { PROPERTY_DATA } from '../data/propertyData';
 import { EsPontBrandLogo } from './EsPontBrandLogo';
+import { useLanguage } from '../context/LanguageContext';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -9,6 +9,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-[92vh] lg:min-h-screen flex items-end justify-start overflow-hidden bg-[#2D2825]">
       {/* Background Hero Image with Warm Scrim */}
@@ -29,12 +31,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
         {/* Clean Kicker / Location */}
         <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm tracking-widest uppercase font-medium text-[#EED8B3] mb-3">
           <MapPin className="w-3.5 h-3.5 text-[#C59B4D]" />
-          <span>Carrer Marola 4, Son Vida</span>
+          <span>{t.hero.locationKicker}</span>
           <span aria-hidden="true" className="text-[#D5C7B7]">·</span>
-          <span>Palma, Mallorca, Spain</span>
+          <span>{t.hero.locationSub}</span>
           <span aria-hidden="true" className="text-[#D5C7B7]">·</span>
           <span className="text-[#7CB88F] flex items-center gap-1 font-semibold">
-            <CheckCircle2 className="w-3.5 h-3.5" /> Direct Booking Best Price
+            <CheckCircle2 className="w-3.5 h-3.5" /> {t.hero.bestPriceBadge}
           </span>
         </div>
 
@@ -44,13 +46,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
             <EsPontBrandLogo size="hero" colorScheme="gold" />
           </div>
           <span className="text-xs sm:text-sm tracking-[0.25em] font-light text-[#EED8B3] uppercase block font-sans-clean">
-            LUXURY PRIVATE ESTATE · SON VIDA, MALLORCA
+            {t.hero.luxuryTag}
           </span>
         </div>
 
         {/* Subtitle / Value Proposition */}
         <p className="text-base sm:text-xl text-[#F2ECE4] font-light max-w-3xl leading-relaxed mb-8">
-          A private Spanish-style villa in prestigious Son Vida with sweeping views over Palma, the bay and the Cathedral, featuring a 10 × 5 m pool, basketball court and 2,200 m² of secluded grounds.
+          {t.hero.subtitle}
         </p>
 
         {/* Key Property Specs Row (Warm Pastel Glass) */}
@@ -58,25 +60,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
           <div className="flex items-center gap-2.5">
             <Users className="w-4 h-4 text-[#C59B4D] shrink-0" />
             <div className="text-xs sm:text-sm font-sans-clean">
-              <span className="font-semibold text-[#2D2825]">Up to 10</span> Guests
+              <span className="font-semibold text-[#2D2825]">{t.hero.upTo10}</span> {t.hero.guests}
             </div>
           </div>
           <div className="flex items-center gap-2.5">
             <Bed className="w-4 h-4 text-[#C59B4D] shrink-0" />
             <div className="text-xs sm:text-sm font-sans-clean">
-              <span className="font-semibold text-[#2D2825]">6</span> Bedrooms
+              <span className="font-semibold text-[#2D2825]">{t.hero.six}</span> {t.hero.bedrooms}
             </div>
           </div>
           <div className="flex items-center gap-2.5">
             <Bath className="w-4 h-4 text-[#C59B4D] shrink-0" />
             <div className="text-xs sm:text-sm font-sans-clean">
-              <span className="font-semibold text-[#2D2825]">4</span> Bathrooms
+              <span className="font-semibold text-[#2D2825]">{t.hero.four}</span> {t.hero.bathrooms}
             </div>
           </div>
           <div className="flex items-center gap-2.5">
             <Waves className="w-4 h-4 text-[#C59B4D] shrink-0" />
             <div className="text-xs sm:text-sm font-sans-clean">
-              <span className="font-semibold text-[#2D2825]">10m × 5m</span> Pool
+              <span className="font-semibold text-[#2D2825]">{t.hero.poolDim}</span> {t.hero.pool}
             </div>
           </div>
         </div>
@@ -88,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
             className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-[#C59B4D] hover:bg-[#B48B3D] text-white font-medium text-sm tracking-wider uppercase transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
           >
             <Calendar className="w-4 h-4" />
-            <span>Check Availability & Book Direct</span>
+            <span>{t.hero.checkAvail}</span>
           </button>
 
           <button
@@ -96,16 +98,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FAF7F2]/20 hover:bg-[#FAF7F2]/30 text-white font-medium text-sm tracking-wider uppercase border border-white/30 backdrop-blur-md transition-all cursor-pointer"
           >
             <ImageIcon className="w-4 h-4 text-[#EED8B3]" />
-            <span>View Photo Gallery (36)</span>
+            <span>{t.hero.viewGallery}</span>
           </button>
         </div>
 
         {/* Direct Booking Best Price Guarantee Note */}
         <div className="mt-6 flex items-center gap-2 text-xs text-[#E8DFD5] font-light font-sans-clean">
           <Sparkles className="w-3.5 h-3.5 text-[#C59B4D]" />
-          <span>Direct host booking with official Best Price Guarantee, instant confirmation & no third-party platform markups.</span>
+          <span>{t.hero.directNote}</span>
         </div>
       </div>
     </section>
   );
 };
+

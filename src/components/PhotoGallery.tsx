@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { GALLERY_PHOTOS } from '../data/propertyData';
+import { useLanguage } from '../context/LanguageContext';
 import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles, ZoomIn, ZoomOut } from 'lucide-react';
 
 interface PhotoGalleryProps {
@@ -11,23 +11,24 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
   initialOpenPhotoId,
   onClearInitialPhoto,
 }) => {
+  const { t, galleryPhotos } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [isExpanded, setIsExpanded] = useState<boolean>(true); // default to showing all so user can review all 36 easily!
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [isZoomed, setIsZoomed] = useState<boolean>(false);
 
   const categories = [
-    { id: 'all', label: `All Photos (${GALLERY_PHOTOS.length})` },
-    { id: 'exterior', label: 'Pool, Terraces & Sports' },
-    { id: 'interior', label: 'Lounges, Hallways & Bathrooms' },
-    { id: 'bedrooms', label: 'Bedrooms' },
-    { id: 'kitchen', label: 'Kitchen & Dining' },
-    { id: 'surroundings', label: 'Gardens & Views' }
+    { id: 'all', label: `${t.gallery.filterAll} (${galleryPhotos.length})` },
+    { id: 'exterior', label: t.gallery.filterExterior },
+    { id: 'interior', label: t.gallery.filterInterior },
+    { id: 'bedrooms', label: t.gallery.filterBedrooms },
+    { id: 'kitchen', label: t.gallery.filterKitchen },
+    { id: 'surroundings', label: t.gallery.filterSurroundings }
   ];
 
   const categoryPhotos = activeCategory === 'all'
-    ? GALLERY_PHOTOS
-    : GALLERY_PHOTOS.filter((p) => p.category === activeCategory);
+    ? galleryPhotos
+    : galleryPhotos.filter((p) => p.category === activeCategory);
 
   const visiblePhotos = isExpanded ? categoryPhotos : categoryPhotos.slice(0, 12);
 
@@ -44,26 +45,26 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 
   const nextPhoto = useCallback(() => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((prev) => (prev !== null ? (prev + 1) % GALLERY_PHOTOS.length : 0));
+    setLightboxIndex((prev) => (prev !== null ? (prev + 1) % galleryPhotos.length : 0));
     setIsZoomed(false);
-  }, [lightboxIndex]);
+  }, [lightboxIndex, galleryPhotos.length]);
 
   const prevPhoto = useCallback(() => {
     if (lightboxIndex === null) return;
     setLightboxIndex((prev) =>
-      prev !== null ? (prev - 1 + GALLERY_PHOTOS.length) % GALLERY_PHOTOS.length : 0
+      prev !== null ? (prev - 1 + galleryPhotos.length) % galleryPhotos.length : 0
     );
     setIsZoomed(false);
-  }, [lightboxIndex]);
+  }, [lightboxIndex, galleryPhotos.length]);
 
   useEffect(() => {
     if (initialOpenPhotoId) {
-      const idx = GALLERY_PHOTOS.findIndex((p) => p.id === initialOpenPhotoId);
+      const idx = galleryPhotos.findIndex((p) => p.id === initialOpenPhotoId);
       if (idx !== -1) {
         setLightboxIndex(idx);
       }
     }
-  }, [initialOpenPhotoId]);
+  }, [initialOpenPhotoId, galleryPhotos]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -98,13 +99,13 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
           <div>
             <div className="text-xs uppercase tracking-widest text-[#C59B4D] font-semibold mb-2 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Complete Photographic Tour</span>
+              <span>{t.gallery.badge}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-light tracking-tight text-[#2D2825]">
-              Capturing ES PONT
+              {t.gallery.heading}
             </h2>
             <p className="text-sm sm:text-base text-[#5C554E] mt-2 font-light max-w-2xl">
-              Explore the private villa, sun terraces, suites, and secluded Mediterranean grounds.
+              {t.gallery.subtitle}
             </p>
           </div>
 
@@ -114,7 +115,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[#E8E2D8] bg-white hover:bg-[#F4EFEB] text-[#2D2825] text-xs font-semibold uppercase tracking-wider transition-colors shadow-xs cursor-pointer"
             >
               <Maximize2 className="w-3.5 h-3.5 text-[#C59B4D]" />
-              <span>Open Lightbox</span>
+              <span>{t.gallery.openLightbox}</span>
             </button>
           </div>
         </div>
@@ -126,6 +127,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
               key={cat.id}
               onClick={() => {
                 setActiveCategory(cat.id);
+                setIsExpanded(false);
               }}
               className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-colors cursor-pointer ${
                 activeCategory === cat.id
@@ -133,7 +135,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
                   : 'bg-white hover:bg-[#F4EFEB] text-[#5C554E] border border-[#E8E2D8]'
               }`}
             >
-              {cat.id === 'all' ? 'All Photos' : cat.label}
+              {cat.label}
             </button>
           ))}
         </div>
@@ -141,7 +143,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
         {/* Uniform Grid: Clean Images with Description Underneath */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visiblePhotos.map((photo, index) => {
-            const originalIndex = GALLERY_PHOTOS.findIndex((p) => p.id === photo.id);
+            const originalIndex = galleryPhotos.findIndex((p) => p.id === photo.id);
 
             return (
               <div
@@ -187,8 +189,8 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
             >
               <span>
                 {isExpanded
-                  ? 'Show preview rows (12 photos)'
-                  : `Show all ${categoryPhotos.length} photos`}
+                  ? t.gallery.showPreview
+                  : t.gallery.showAll}
               </span>
             </button>
           </div>
@@ -196,7 +198,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
       </div>
 
       {/* Fullscreen Lightbox Modal: Shows the full-size uncropped photo with high-res zoom */}
-      {lightboxIndex !== null && (
+      {lightboxIndex !== null && galleryPhotos[lightboxIndex] && (
         <div className="fixed inset-0 z-50 bg-[#151413]/95 backdrop-blur-md flex flex-col justify-between select-none animate-in fade-in duration-200">
           
           {/* Lightbox Top Bar */}
@@ -218,7 +220,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
                 title="Toggle Full Resolution Zoom"
               >
                 {isZoomed ? <ZoomOut className="w-3.5 h-3.5" /> : <ZoomIn className="w-3.5 h-3.5" />}
-                <span>{isZoomed ? 'Fit to Screen' : 'Full Size'}</span>
+                <span>{isZoomed ? t.gallery.fitToScreen : t.gallery.fullSize}</span>
               </button>
 
               <button
@@ -248,8 +250,8 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
             {/* Photo in Full Original Proportions */}
             <div className="max-w-full max-h-full flex items-center justify-center">
               <img
-                src={GALLERY_PHOTOS[lightboxIndex].url}
-                alt={GALLERY_PHOTOS[lightboxIndex].alt}
+                src={galleryPhotos[lightboxIndex].url}
+                alt={galleryPhotos[lightboxIndex].alt}
                 referrerPolicy="no-referrer"
                 className={`rounded-lg shadow-2xl transition-all duration-300 ${
                   isZoomed
@@ -277,13 +279,13 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
           <div className="px-4 sm:px-6 py-3.5 bg-stone-950/90 border-t border-stone-800/80 text-stone-300">
             <div className="text-center max-w-3xl mx-auto mb-2.5">
               <p className="text-xs sm:text-sm font-light text-stone-200 leading-relaxed">
-                {GALLERY_PHOTOS[lightboxIndex].caption}
+                {galleryPhotos[lightboxIndex].caption}
               </p>
             </div>
 
             {/* Thumbnail Ribbon for all photos */}
             <div className="hidden sm:flex items-center justify-center gap-1.5 overflow-x-auto max-w-5xl mx-auto pb-1 no-scrollbar">
-              {GALLERY_PHOTOS.map((photo, i) => (
+              {galleryPhotos.map((photo, i) => (
                 <button
                   key={photo.id}
                   onClick={() => {

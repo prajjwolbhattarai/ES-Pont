@@ -1,33 +1,30 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --font-serif: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
-    --font-sans: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
-    --brand-gold: #D8B475;
-    --pastel-bg: #FAF7F2;
-    --pastel-card: #FFFFFF;
-    --pastel-surface: #F4EFEB;
-    --pastel-border: #E8E2D8;
-    --text-primary: #2D2825;
-    --text-secondary: #5C554E;
-  }
+:root {
+  --font-serif: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
+  --font-sans: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif;
+  --brand-gold: #D8B475;
+  --pastel-bg: #FAF7F2;
+  --pastel-card: #FFFFFF;
+  --pastel-surface: #F4EFEB;
+  --pastel-border: #E8E2D8;
+  --text-primary: #2D2825;
+  --text-secondary: #5C554E;
+  font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+}
 
-  *, *::before, *::after {
-    font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
-  }
+*, *::before, *::after,
+html, body, #root,
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select, label, div, section, header, footer, main, nav, ul, ol, li, strong, b, em, i {
+  font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+}
 
-  html, body {
-    background-color: var(--pastel-bg);
-    color: var(--text-primary);
-    font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select, label, div {
-    font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
-  }
+html, body {
+  background-color: var(--pastel-bg);
+  color: var(--text-primary);
+  font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-brand-espont {
@@ -43,6 +40,7 @@
 .font-sans-clean {
   font-family: 'GFS Didot', 'Didot', 'Bodoni MT', Georgia, serif !important;
 }
+
 
 .bg-pastel-bg {
   background-color: #FAF7F2;

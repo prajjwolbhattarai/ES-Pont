@@ -7,6 +7,7 @@ import {
   MessageCircle
 } from 'lucide-react';
 import { PROPERTY_DATA } from '../data/propertyData';
+import { useLanguage } from '../context/LanguageContext';
 
 interface BookingSectionProps {
   onOpenContact: () => void;
@@ -14,6 +15,19 @@ interface BookingSectionProps {
 
 export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenContact }) => {
   const [iframeLoaded, setIframeLoaded] = useState(false);
+  const { t, perks, language } = useLanguage();
+
+  const customAssistanceDesc = {
+    en: 'Need customized dates, corporate terms, or local concierge advice for your visit to Son Vida?',
+    es: '¿Necesita fechas personalizadas, estancias prolongadas o asistencia local para su visita a Son Vida?',
+    de: 'Benötigen Sie individuelle Reisedaten, Firmenkonditionen oder Concierge-Tipps für Ihren Aufenthalt in Son Vida?'
+  }[language];
+
+  const licenseLabel = {
+    en: 'Official Balearic Tourism License:',
+    es: 'Licencia Turística Oficial de Baleares:',
+    de: 'Offizielle Tourismuslizenz Balearen:'
+  }[language];
 
   useEffect(() => {
     // Check if BookingToolIframe is already loaded or dynamically inject it
@@ -91,15 +105,23 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenContact })
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C59B4D] font-semibold mb-3 px-3.5 py-1.5 rounded-full bg-[#FAF5EC] border border-[#EEDBBA]/60">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Direct Reservation & Real-Time Availability</span>
+            <span>{t.booking.badge}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-light text-[#2D2825] tracking-tight leading-tight">
-            Reserve <span className="font-brand-espont text-[#C59B4D] tracking-[0.08em] font-normal">ES PONT</span> Directly
+            {t.booking.heading.includes('ES PONT') ? (
+              <>
+                {t.booking.heading.split('ES PONT')[0]}
+                <span className="font-brand-espont text-[#C59B4D] tracking-[0.08em] font-normal">ES PONT</span>
+                {t.booking.heading.split('ES PONT')[1]}
+              </>
+            ) : (
+              t.booking.heading
+            )}
           </h2>
 
           <p className="text-sm sm:text-base text-[#5C554E] mt-3 font-light max-w-2xl mx-auto leading-relaxed">
-            Experience authentic Mediterranean living in Son Vida with direct host booking. Best rates guaranteed, flexible dates, and secure instant confirmation via our integrated Smoobu engine.
+            {t.booking.subtitle}
           </p>
         </div>
 
@@ -109,7 +131,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenContact })
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
               <span className="text-xs uppercase tracking-wider font-semibold text-[#2D2825]">
-                Live Direct Calendar & Instant Booking
+                {t.booking.liveBadge}
               </span>
             </div>
           </div>
@@ -124,7 +146,6 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenContact })
               title="Official Smoobu Booking Tool for ES PONT"
               src="https://booking.smoobu.com/sonvida"
               scrolling="no"
-              allowTransparency={true}
               allowFullScreen={true}
               onLoad={() => setIframeLoaded(true)}
               className="w-full min-h-[130px] border-0 rounded-xl transition-all duration-300"
@@ -136,9 +157,9 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenContact })
           <div className="mt-3 pt-3 border-t border-[#F4EFEB] flex flex-wrap items-center justify-between gap-3 text-xs text-[#5C554E] font-light">
             <div className="flex items-center gap-2">
               <Lock className="w-3.5 h-3.5 text-emerald-600" />
-              <span>256-bit SSL encrypted connection · Bank-level checkout security</span>
+              <span>{t.booking.sslText}</span>
             </div>
-            <span>Official Balearic Tourism License: <strong>{PROPERTY_DATA.licenseNumber}</strong></span>
+            <span>{licenseLabel} <strong>{PROPERTY_DATA.licenseNumber}</strong></span>
           </div>
         </div>
 
@@ -149,42 +170,20 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenContact })
               <ShieldCheck className="w-4 h-4" />
             </div>
             <h3 className="text-base font-semibold text-[#2D2825]">
-              Direct Booking Perks (Direktbucher-Vorteile)
+              {t.perks.title}
             </h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-            <div className="p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8]/70 flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-              <div>
-                <strong className="block text-[#2D2825] font-semibold mb-0.5">Best Rate Guaranteed</strong>
-                <span className="text-[#5C554E] font-light">100% direct host pricing without intermediary portal markups.</span>
+            {perks.map((perk) => (
+              <div key={perk.title} className="p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8]/70 flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-[#2D2825] font-semibold mb-0.5">{perk.title}</strong>
+                  <span className="text-[#5C554E] font-light">{perk.description}</span>
+                </div>
               </div>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8]/70 flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-              <div>
-                <strong className="block text-[#2D2825] font-semibold mb-0.5">Contactless Check-In</strong>
-                <span className="text-[#5C554E] font-light">Smart encrypted keybox code sent before arrival or host welcome.</span>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8]/70 flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-              <div>
-                <strong className="block text-[#2D2825] font-semibold mb-0.5">Direct Host Support</strong>
-                <span className="text-[#5C554E] font-light">Immediate personal contact for inquiries, concierge & recommendations.</span>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8E2D8]/70 flex items-start gap-2.5">
-              <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-              <div>
-                <strong className="block text-[#2D2825] font-semibold mb-0.5">Flexible Cancellation</strong>
-                <span className="text-[#5C554E] font-light">Full 100% refund up to 14 days prior to your arrival date.</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -196,10 +195,10 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenContact })
             </div>
             <div>
               <h4 className="text-sm font-semibold text-[#2D2825]">
-                Questions About Dates or Custom Stays?
+                {t.booking.needAssistance}
               </h4>
               <p className="text-xs text-[#5C554E] font-light mt-0.5">
-                Need customized dates, corporate terms, or local concierge advice for your visit to Son Vida?
+                {customAssistanceDesc}
               </p>
             </div>
           </div>
@@ -210,7 +209,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ onOpenContact })
               onClick={onOpenContact}
               className="w-full md:w-auto py-3 px-6 rounded-xl bg-[#C59B4D] hover:bg-[#B48B3D] text-white text-xs font-semibold uppercase tracking-wider transition-colors text-center shadow-xs cursor-pointer"
             >
-              Send Direct Inquiry Form
+              {t.booking.inquireBtn}
             </button>
           </div>
         </div>

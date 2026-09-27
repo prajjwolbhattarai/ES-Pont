@@ -23,7 +23,7 @@ export const PROPERTY_DATA: PropertyDetails = {
     plotAreaM2: 2200,
     poolSize: "10m × 5m private swimming pool",
   },
-  licenseNumber: "ETV/13085 (Mallorca – Regional registration number)",
+  licenseNumber: "VT/106136",
   description: {
     summary:
       "Es Pont is a private Spanish-style villa in the prestigious residential area of Son Vida, with sweeping views over Palma, the bay and the Cathedral. Set within more than 2,200 m² of secluded grounds, the property offers 6 bedrooms, 4 bathrooms, a 10 x 5 m pool, mature Mediterranean gardens, elegant outdoor living and a private basketball court. A peaceful retreat of character and privacy, only minutes from Palma.",
@@ -43,7 +43,7 @@ export const PROPERTY_DATA: PropertyDetails = {
       "Fully equipped chef kitchen, indoor fireplace & BBQ area",
       "High-speed Wi-Fi and individual air conditioning throughout",
       "Prestigious Son Vida address only 10 minutes from Palma center",
-      "Official regional tourist registration number ETV/13085"
+      "Official regional tourist registration number VT/106136"
     ]
   },
   policies: {
@@ -454,12 +454,12 @@ export const AMENITIES_LIST: Amenity[] = [
 export const BEDROOMS_LIST: BedroomInfo[] = [
   {
     id: "b1",
-    name: "Bedroom 1",
-    bedType: "Twin Beds (or Double setup)",
+    name: "Bedroom 1 (Master Bedroom)",
+    bedType: "1 King Bed",
     capacity: "2 Guests",
-    description: "Bedroom with twin beds (configurable as a double bed) offering peaceful garden orientation and tranquil comfort.",
-    features: ["Twin Beds / Double setup", "Quiet garden orientation", "Air conditioning", "Adjacent bathroom access"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/55e9a1c2-2f02-435b-838e-ce467ad23e15.jpeg" // Image 4
+    description: "Spacious master suite featuring private balcony access, panoramic views over Son Vida, peaceful ambiance, and direct bathroom access.",
+    features: ["King size bed", "Private balcony access", "Panoramic Son Vida views", "Air conditioning", "Direct bathroom access"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/18221ce2-e8c1-4093-afca-b3bf1c5c4df2.png" // Image 23 (Private balcony view)
   },
   {
     id: "b2",
@@ -482,11 +482,11 @@ export const BEDROOMS_LIST: BedroomInfo[] = [
   {
     id: "b4",
     name: "Bedroom 4",
-    bedType: "1 Double Bed (Private Balcony)",
+    bedType: "1 Queen Bed",
     capacity: "2 Guests",
-    description: "Bedroom with private balcony access and panoramic views over Son Vida.",
-    features: ["1 Double bed", "Private balcony access", "Panoramic views over Son Vida", "Air conditioning"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/18221ce2-e8c1-4093-afca-b3bf1c5c4df2.png" // Image 23
+    description: "Restful bedroom suite with individual climate control, queen bedding, and tranquil garden views.",
+    features: ["1 Queen bed", "Individual climate control", "Garden orientation", "Wardrobe space"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/c00ad4b1-9a76-412d-aaa2-0083c8720b10.png" // Image 21
   },
   {
     id: "b5",
@@ -502,9 +502,9 @@ export const BEDROOMS_LIST: BedroomInfo[] = [
     name: "Bedroom 6",
     bedType: "Twin Beds (or Double setup)",
     capacity: "2 Guests",
-    description: "Bedroom with twin beds (configurable as a double bed), comfortable bedding, and quiet ambiance.",
+    description: "Inviting bedroom with twin beds (configurable as a double bed), comfortable bedding, and quiet ambiance.",
     features: ["Twin Beds / Double setup", "Comfortable mattresses", "Fresh cotton linens", "High-speed Wi-Fi access"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/caf5e595-f16c-449c-8f89-3ec25ad6ba25.jpeg" // Image 24
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/55e9a1c2-2f02-435b-838e-ce467ad23e15.jpeg" // Image 4 / 24
   }
 ];
 

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Tag, ShieldCheck, MessageSquare, RefreshCw, ArrowRight, Sparkles } from 'lucide-react';
-import { DIRECT_BOOKING_PERKS } from '../data/propertyData';
+import { useLanguage } from '../context/LanguageContext';
 
 interface DirectBookingBannerProps {
   onOpenBooking: () => void;
 }
 
 export const DirectBookingBanner: React.FC<DirectBookingBannerProps> = ({ onOpenBooking }) => {
+  const { t, perks } = useLanguage();
+
   const icons = [
     <Tag className="w-5 h-5 text-[#B68D40]" key="tag" />,
     <ShieldCheck className="w-5 h-5 text-[#B68D40]" key="shield" />,
@@ -21,23 +23,23 @@ export const DirectBookingBanner: React.FC<DirectBookingBannerProps> = ({ onOpen
           <div>
             <div className="text-xs uppercase tracking-widest text-[#B68D40] font-semibold mb-1 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Direct Reservation Advantages</span>
+              <span>{t.perks.badge}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-light text-stone-900">
-              Why Book Directly at <span className="font-brand-espont text-[#B68D40] tracking-[0.08em] font-normal">ES PONT</span>?
+              {t.perks.title}
             </h2>
           </div>
           <button
             onClick={onOpenBooking}
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#A37B30] hover:text-[#845E1B] transition-colors group cursor-pointer"
           >
-            <span>Reserve direct with host</span>
+            <span>{t.nav.bookDirect}</span>
             <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {DIRECT_BOOKING_PERKS.map((perk, idx) => (
+          {perks.map((perk, idx) => (
             <div
               key={perk.title}
               className="p-6 rounded-2xl bg-white border border-stone-200/70 shadow-xs hover:shadow-md hover:border-[#D8B475]/60 transition-all group"
@@ -47,7 +49,7 @@ export const DirectBookingBanner: React.FC<DirectBookingBannerProps> = ({ onOpen
               </div>
               <h3 className="text-base font-semibold text-stone-900 mb-2">{perk.title}</h3>
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-                {perk.desc}
+                {perk.description}
               </p>
             </div>
           ))}
@@ -56,4 +58,5 @@ export const DirectBookingBanner: React.FC<DirectBookingBannerProps> = ({ onOpen
     </section>
   );
 };
+
 

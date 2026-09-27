@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AMENITIES_LIST } from '../data/propertyData';
+import { useLanguage } from '../context/LanguageContext';
 import {
   Waves,
   Sun,
@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 
 export const AmenitiesSection: React.FC = () => {
+  const { t, amenitiesList, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -52,23 +53,49 @@ export const AmenitiesSection: React.FC = () => {
   };
 
   const categories = [
-    { id: 'all', label: 'All Amenities' },
-    { id: 'views', label: 'Scenic Views' },
-    { id: 'bathroom', label: 'Bathroom' },
-    { id: 'bedroom_laundry', label: 'Bedroom & Laundry' },
-    { id: 'heating_cooling', label: 'Heating & Cooling' },
-    { id: 'kitchen_dining', label: 'Kitchen & Dining' },
-    { id: 'parking_facilities', label: 'Parking & Facilities' },
-    { id: 'home_safety', label: 'Home Safety' },
-    { id: 'services', label: 'Services' }
+    { id: 'all', label: t.amenities.filterAll },
+    { id: 'views', label: t.amenities.categories.views },
+    { id: 'bathroom', label: t.amenities.categories.bathroom },
+    { id: 'bedroom_laundry', label: t.amenities.categories.bedroom_laundry },
+    { id: 'heating_cooling', label: t.amenities.categories.heating_cooling },
+    { id: 'kitchen_dining', label: t.amenities.categories.kitchen_dining },
+    { id: 'parking_facilities', label: t.amenities.categories.parking_facilities },
+    { id: 'home_safety', label: t.amenities.categories.home_safety },
+    { id: 'services', label: t.amenities.categories.services }
   ];
 
   const filteredAmenities = selectedCategory === 'all'
-    ? AMENITIES_LIST
-    : AMENITIES_LIST.filter((a) => a.category === selectedCategory);
+    ? amenitiesList
+    : amenitiesList.filter((a) => a.category === selectedCategory);
 
   // Initial display: 6 items, expands to all
   const visibleAmenities = isExpanded ? filteredAmenities : filteredAmenities.slice(0, 6);
+
+  const buttonText = isExpanded
+    ? (language === 'es' ? 'Mostrar menos comodidades' : language === 'de' ? 'Weniger anzeigen' : 'Show fewer amenities')
+    : (language === 'es'
+        ? `Ver todas las comodidades (${filteredAmenities.length})`
+        : language === 'de'
+        ? `Alle Ausstattungen anzeigen (${filteredAmenities.length})`
+        : `Show all amenities (${filteredAmenities.length})`);
+
+  const safetyInfo = {
+    en: {
+      title: 'Smoke Alarms & Carbon Monoxide Alarms Installed',
+      desc: 'Outside areas and entryway are monitored by exterior security cameras for guest safety.',
+      badge: '100% Certified Safe Stay'
+    },
+    es: {
+      title: 'Detectores de Humo y Monóxido de Carbono Instalados',
+      desc: 'Zonas exteriores y entrada supervisadas por cámaras de seguridad para la tranquilidad de los huéspedes.',
+      badge: 'Estancia 100% Certificada y Segura'
+    },
+    de: {
+      title: 'Rauch- und Kohlenmonoxidmelder vorhanden',
+      desc: 'Außenbereiche und der Eingangsbereich sind für die Sicherheit der Gäste mit Außenkameras versehen.',
+      badge: '100% Geprüfter sicherer Aufenthalt'
+    }
+  }[language];
 
   return (
     <section id="amenities" className="py-20 bg-[#FAF7F2] text-[#2D2825] border-t border-[#E8E2D8]">
@@ -78,13 +105,13 @@ export const AmenitiesSection: React.FC = () => {
         <div className="max-w-3xl mb-10">
           <div className="text-xs uppercase tracking-widest text-[#C59B4D] font-semibold mb-2 font-sans-clean flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Villa Specifications</span>
+            <span>{t.amenities.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-light text-[#2D2825] tracking-tight">
-            What this place offers
+            {t.amenities.heading}
           </h2>
           <p className="text-sm sm:text-base text-[#5C554E] mt-2 font-light font-sans-clean">
-            Complete amenity specifications for ES Pont in Son Vida.
+            {t.amenities.subtitle}
           </p>
         </div>
 
@@ -147,11 +174,7 @@ export const AmenitiesSection: React.FC = () => {
             onClick={() => setIsExpanded(!isExpanded)}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#E8E2D8] bg-white hover:bg-[#F4EFEB] text-[#2D2825] text-xs font-semibold uppercase tracking-wider transition-all shadow-xs hover:shadow-sm cursor-pointer font-sans-clean"
           >
-            <span>
-              {isExpanded
-                ? 'Show fewer amenities'
-                : `Show all amenities (${filteredAmenities.length})`}
-            </span>
+            <span>{buttonText}</span>
           </button>
         </div>
 
@@ -161,15 +184,15 @@ export const AmenitiesSection: React.FC = () => {
             <ShieldCheck className="w-6 h-6 text-[#C59B4D] shrink-0" />
             <div>
               <h4 className="text-sm font-semibold text-[#2D2825] font-sans-clean">
-                Smoke Alarms & Carbon Monoxide Alarms Installed
+                {safetyInfo.title}
               </h4>
               <p className="text-xs text-[#5C554E] font-light mt-0.5 font-sans-clean">
-                Outside areas and entryway are monitored by exterior security cameras for guest safety.
+                {safetyInfo.desc}
               </p>
             </div>
           </div>
           <span className="text-xs font-semibold text-[#C59B4D] shrink-0 uppercase tracking-wider font-sans-clean">
-            100% Certified Safe Stay
+            {safetyInfo.badge}
           </span>
         </div>
       </div>

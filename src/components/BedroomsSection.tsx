@@ -1,8 +1,10 @@
 import React from 'react';
-import { BEDROOMS_LIST } from '../data/propertyData';
 import { Bed, Users, Bath, Check, Sparkles } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const BedroomsSection: React.FC = () => {
+  const { t, bedroomsList } = useLanguage();
+
   return (
     <section id="bedrooms" className="py-20 bg-white text-[#2D2825] border-t border-[#E8E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,19 +12,19 @@ export const BedroomsSection: React.FC = () => {
         <div className="max-w-3xl mb-12">
           <div className="text-xs uppercase tracking-widest text-[#C59B4D] font-semibold mb-2 font-sans-clean flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Rest & Rejuvenation</span>
+            <span>{t.bedrooms.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-serif-luxury font-light text-[#2D2825] tracking-tight">
-            6 Bedrooms & 4 Bathrooms
+            {t.bedrooms.heading}
           </h2>
           <p className="text-sm sm:text-base text-[#5C554E] mt-2 font-light font-sans-clean">
-            Designed for deep rest and peaceful silence in residential Son Vida. Accommodating up to 10 guests across 6 private bedrooms with 4 bathrooms, independent climate control, and fresh hotel-grade linens.
+            {t.bedrooms.subtitle}
           </p>
         </div>
 
         {/* Bedroom Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {BEDROOMS_LIST.map((room) => (
+          {bedroomsList.map((room) => (
             <div
               key={room.id}
               className="rounded-2xl overflow-hidden border border-[#E8E2D8] bg-[#FAF7F2] flex flex-col group hover:shadow-md transition-shadow"
@@ -78,10 +80,10 @@ export const BedroomsSection: React.FC = () => {
             </div>
             <div>
               <h4 className="text-lg font-serif-luxury font-medium text-[#2D2825] mb-1">
-                4 Full Bathrooms with Rain Showers & Vanities
+                {t.bedrooms.bathroomsHighlightTitle}
               </h4>
               <p className="text-xs sm:text-sm text-[#5C554E] font-light leading-relaxed font-sans-clean">
-                Equipped with modern fittings, high-pressure hot water, organic soaps, plush bath sheets, and dedicated swimming pool towels for all guests.
+                {t.bedrooms.bathroomsHighlightDesc}
               </p>
             </div>
           </div>
@@ -92,10 +94,10 @@ export const BedroomsSection: React.FC = () => {
             </div>
             <div>
               <h4 className="text-lg font-serif-luxury font-medium text-[#2D2825] mb-1">
-                Accommodating Groups up to 10 Guests
+                {t.bedrooms.groupsHighlightTitle}
               </h4>
               <p className="text-xs sm:text-sm text-[#5C554E] font-light leading-relaxed font-sans-clean">
-                6 separate bedrooms offering privacy for families or retreat groups, with baby cots and children high chairs prepared complimentary upon request.
+                {t.bedrooms.groupsHighlightDesc}
               </p>
             </div>
           </div>
