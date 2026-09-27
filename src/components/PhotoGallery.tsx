@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles, ZoomIn, ZoomOut } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles, ZoomIn, ZoomOut, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface PhotoGalleryProps {
   initialOpenPhotoId?: string | null;
@@ -11,11 +11,23 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
   initialOpenPhotoId,
   onClearInitialPhoto,
 }) => {
-  const { t, galleryPhotos } = useLanguage();
+  const { t, galleryPhotos, language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [isZoomed, setIsZoomed] = useState<boolean>(false);
+
+  const toggleExpand = () => {
+    if (isExpanded) {
+      setIsExpanded(false);
+      const galleryEl = document.getElementById('gallery');
+      if (galleryEl) {
+        galleryEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      setIsExpanded(true);
+    }
+  };
 
   const categories = [
     { id: 'all', label: `${t.gallery.filterAll} (${galleryPhotos.length})` },
@@ -182,16 +194,35 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 
         {/* Show More / Show Less Toggle Button */}
         {categoryPhotos.length > 12 && (
-          <div className="mt-10 text-center">
+          <div className="mt-12 text-center flex flex-col items-center justify-center gap-3">
+            <p className="text-xs text-[#5C554E] font-light">
+              {language === 'es'
+                ? isExpanded
+                  ? `Mostrando las ${categoryPhotos.length} fotos`
+                  : `Mostrando 12 de ${categoryPhotos.length} fotos`
+                : language === 'de'
+                ? isExpanded
+                  ? `Alle ${categoryPhotos.length} Fotos werden angezeigt`
+                  : `12 von ${categoryPhotos.length} Fotos werden angezeigt`
+                : isExpanded
+                ? `Showing all ${categoryPhotos.length} photos`
+                : `Showing 12 of ${categoryPhotos.length} photos`}
+            </p>
             <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-[#E8E2D8] bg-white hover:bg-[#F4EFEB] text-[#2D2825] text-xs font-semibold uppercase tracking-wider transition-all shadow-xs hover:shadow-sm cursor-pointer"
+              type="button"
+              onClick={toggleExpand}
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-xl border border-[#E8E2D8] bg-white hover:bg-[#F4EFEB] text-[#2D2825] text-xs font-semibold uppercase tracking-wider transition-all shadow-xs hover:shadow-md cursor-pointer group"
             >
               <span>
                 {isExpanded
                   ? t.gallery.showPreview
                   : t.gallery.showAll}
               </span>
+              {isExpanded ? (
+                <ChevronUp className="w-4 h-4 text-[#C59B4D] group-hover:-translate-y-0.5 transition-transform" />
+              ) : (
+                <ChevronDown className="w-4 h-4 text-[#C59B4D] group-hover:translate-y-0.5 transition-transform" />
+              )}
             </button>
           </div>
         )}
