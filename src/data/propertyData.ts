@@ -15,7 +15,7 @@ export const PROPERTY_DATA: PropertyDetails = {
     },
   },
   metrics: {
-    guests: 8,
+    guests: 12,
     bedrooms: 6,
     bathrooms: 4,
     beds: 6,
@@ -26,7 +26,7 @@ export const PROPERTY_DATA: PropertyDetails = {
   licenseNumber: "VT/106136",
   description: {
     summary:
-      "Es Pont is a private Spanish-style villa in the prestigious residential area of Son Vida, with sweeping views over Palma, the bay and the Cathedral. Set within more than 2,200 m² of secluded grounds, the property offers 6 bedrooms, 4 bathrooms, a 10 x 5 m pool, mature Mediterranean gardens, elegant outdoor living and a private basketball court. A peaceful retreat of character and privacy accommodating up to 8 guests, only minutes from Palma.",
+      "Es Pont is a private Spanish-style villa in the prestigious residential area of Son Vida, with sweeping views over Palma, the bay and the Cathedral. Set within more than 2,200 m² of secluded grounds, the property offers 6 bedrooms, 4 bathrooms, a 10 x 5 m pool, mature Mediterranean gardens, elegant outdoor living and a private basketball court. A peaceful retreat of character and privacy accommodating up to 12 guests, only minutes from Palma.",
     longDescription: [
       "The villa combines authentic Mediterranean character with generous indoor and outdoor living. Guests can enjoy several terraces, a fully equipped kitchen, air conditioning, high-speed Wi-Fi, free parking, a barbecue area and a beautifully landscaped garden designed for privacy and relaxation.",
       "Guests have access to the entire villa and its outdoor areas, including the pool, terraces, gardens, barbecue area and basketball court. The property is private and intended for a peaceful and comfortable stay.",
@@ -53,7 +53,7 @@ export const PROPERTY_DATA: PropertyDetails = {
     ecoTax: "Balearic Sustainable Tourism Tax (Ecotasa) €2.20 per adult per night",
     cancellation: "Direct booking flexible cancellation policy: Full refund up to 14 days prior to arrival",
     rules: [
-      "Maximum occupancy: 8 guests (suitable for families and mature groups)",
+      "Maximum occupancy: 12 guests (suitable for families and mature groups)",
       "Strictly no parties or events permitted",
       "Pets may be accepted upon prior request with host",
       "Quiet hours: 23:00 – 08:00 (residential neighborhood protocol)",

@@ -208,7 +208,7 @@ export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onCl
                     onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-[#E8E2D8] text-sm focus:outline-none focus:ring-2 focus:ring-[#C59B4D] bg-[#FAF7F2] font-sans-clean"
                   >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
                       <option key={num} value={num}>
                         {num} {num === 1 ? guestSingleLabel : guestLabel}
                       </option>

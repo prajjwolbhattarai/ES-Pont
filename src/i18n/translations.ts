@@ -32,7 +32,7 @@ export const TRANSLATIONS = {
       bestPriceBadge: 'Direct Booking Best Price',
       luxuryTag: 'LUXURY PRIVATE ESTATE · SON VIDA, MALLORCA',
       subtitle: 'A private Spanish-style villa in prestigious Son Vida with sweeping views over Palma, the bay and the Cathedral, featuring a 10 × 5 m pool, basketball court and 2,200 m² of secluded grounds.',
-      upTo10: 'Up to 8',
+      upTo10: 'Up to 12',
       guests: 'Guests',
       six: '6',
       bedrooms: 'Bedrooms',
@@ -72,7 +72,7 @@ export const TRANSLATIONS = {
       heading: 'A Secluded Mediterranean Sanctuary',
       subtitle: 'Set within over 2,200 m² of private grounds in Mallorca’s most prestigious residential enclave.',
       metrics: {
-        guests: '8 Guests',
+        guests: '12 Guests',
         guestsLabel: 'Max. Capacity',
         bedrooms: '6 Bedrooms',
         bedroomsLabel: 'Luxury Suites',
@@ -140,10 +140,10 @@ export const TRANSLATIONS = {
     bedrooms: {
       badge: 'Rest & Rejuvenation',
       heading: '6 Bedrooms & 4 Bathrooms',
-      subtitle: 'Designed for deep rest and peaceful silence in residential Son Vida. Accommodating up to 8 guests across private bedrooms with 4 bathrooms, independent climate control, and fresh hotel-grade linens.',
+      subtitle: 'Designed for deep rest and peaceful silence in residential Son Vida. Accommodating up to 12 guests across private bedrooms with 4 bathrooms, independent climate control, and fresh hotel-grade linens.',
       bathroomsHighlightTitle: '4 Full Bathrooms with Rain Showers & Vanities',
       bathroomsHighlightDesc: 'Equipped with modern fittings, high-pressure hot water, organic soaps, plush bath sheets, and dedicated swimming pool towels for all guests.',
-      groupsHighlightTitle: 'Accommodating Groups up to 8 Guests',
+      groupsHighlightTitle: 'Accommodating Groups up to 12 Guests',
       groupsHighlightDesc: 'Private bedrooms offering tranquil comfort for families or retreat groups, with baby cots and children high chairs prepared complimentary upon request.'
     },
     booking: {
@@ -261,7 +261,7 @@ export const TRANSLATIONS = {
       bestPriceBadge: 'Mejor Precio de Reserva Directa',
       luxuryTag: 'FINCA PRIVADA DE LUJO · SON VIDA, MALLORCA',
       subtitle: 'Una villa privada de estilo español en la prestigiosa zona de Son Vida con impresionantes vistas panorámicas de Palma, la bahía y la Catedral, piscina de 10 × 5 m, cancha de baloncesto y 2.200 m² de jardines privados.',
-      upTo10: 'Hasta 8',
+      upTo10: 'Hasta 12',
       guests: 'Huéspedes',
       six: '6',
       bedrooms: 'Dormitorios',
@@ -301,7 +301,7 @@ export const TRANSLATIONS = {
       heading: 'Un Refugio Mediterráneo Exclusivo y Privado',
       subtitle: 'Ubicada en más de 2.200 m² de jardines privados en la urbanización residencial más prestigiosa de Mallorca.',
       metrics: {
-        guests: '8 Huéspedes',
+        guests: '12 Huéspedes',
         guestsLabel: 'Capacidad Máx.',
         bedrooms: '6 Dormitorios',
         bedroomsLabel: 'Suites de Lujo',
@@ -369,10 +369,10 @@ export const TRANSLATIONS = {
     bedrooms: {
       badge: 'Descanso y Confort',
       heading: '6 Dormitorios y 4 Baños',
-      subtitle: 'Diseñado para el descanso absoluto y el silencio más plácido en la zona residencial de Son Vida. Capacidad para hasta 8 huéspedes en dormitorios privados con 4 baños, aire acondicionado individual y ropa de cama de calidad hotelera.',
+      subtitle: 'Diseñado para el descanso absoluto y el silencio más plácido en la zona residencial de Son Vida. Capacidad para hasta 12 huéspedes en dormitorios privados con 4 baños, aire acondicionado individual y ropa de cama de calidad hotelera.',
       bathroomsHighlightTitle: '4 Baños Completos con Duchas Italianas y Tocadores',
       bathroomsHighlightDesc: 'Equipados con grifería moderna, agua caliente continua, jabones orgánicos, toallas suaves de algodón y toallas exclusivas para la piscina.',
-      groupsHighlightTitle: 'Ideal para Grupos de hasta 8 Huéspedes',
+      groupsHighlightTitle: 'Ideal para Grupos de hasta 12 Huéspedes',
       groupsHighlightDesc: 'Dormitorios independientes que ofrecen total intimidad para familias o retiros, con cunas y tronas para bebés disponibles de forma gratuita previa solicitud.'
     },
     booking: {
@@ -490,7 +490,7 @@ export const TRANSLATIONS = {
       bestPriceBadge: 'Bestpreis bei Direktbuchung',
       luxuryTag: 'EXKLUSIVES PRIVATANWESEN · SON VIDA, MALLORCA',
       subtitle: 'Eine private Villa im spanischen Stil im renommierten Son Vida mit weitem Panoramablick auf Palma, die Bucht und die Kathedrale, privatem 10 × 5 m Pool, Basketballplatz und 2.200 m² uneinsehbarem Grundstück.',
-      upTo10: 'Bis zu 8',
+      upTo10: 'Bis zu 12',
       guests: 'Gäste',
       six: '6',
       bedrooms: 'Schlafzimmer',
@@ -530,7 +530,7 @@ export const TRANSLATIONS = {
       heading: 'Ein privates mediterranes Refugium',
       subtitle: 'Eingebettet in über 2.200 m² privates Grundstück in Mallorcas renommiertester Wohngegend.',
       metrics: {
-        guests: '8 Gäste',
+        guests: '12 Gäste',
         guestsLabel: 'Max. Belegung',
         bedrooms: '6 Schlafzimmer',
         bedroomsLabel: 'Luxuriöse Suiten',
@@ -598,10 +598,10 @@ export const TRANSLATIONS = {
     bedrooms: {
       badge: 'Erholung & Schlafkomfort',
       heading: '6 Schlafzimmer & 4 Badezimmer',
-      subtitle: 'Konzipiert für tiefen Schlaf und vollkommene Ruhe im Wohnviertel Son Vida. Bietet Platz für bis zu 8 Gäste in privaten Schlafzimmern mit 4 Badezimmern, individueller Klimatisierung und frischer Bettwäsche in Hotelqualität.',
+      subtitle: 'Konzipiert für tiefen Schlaf und vollkommene Ruhe im Wohnviertel Son Vida. Bietet Platz für bis zu 12 Gäste in privaten Schlafzimmern mit 4 Badezimmern, individueller Klimatisierung und frischer Bettwäsche in Hotelqualität.',
       bathroomsHighlightTitle: '4 voll ausgestattete Badezimmer mit Regenduschen',
       bathroomsHighlightDesc: 'Modern ausgestattet mit zuverlässigem Warmwasser, biologischen Seifen, weichen Duschtüchern und separaten Poolhandtüchern für alle Gäste.',
-      groupsHighlightTitle: 'Ideal für Reisegruppen bis zu 8 Personen',
+      groupsHighlightTitle: 'Ideal für Reisegruppen bis zu 12 Personen',
       groupsHighlightDesc: 'Separate Schlafzimmer für maximale Privatsphäre von Familien oder Gruppen. Babybetten und Hochstühle stellen wir auf Wunsch gerne kostenfrei bereit.'
     },
     booking: {
@@ -978,7 +978,7 @@ export const FAQS_TRANSLATIONS: Record<Language, { q: string; a: string }[]> = {
   en: [
     {
       q: "How many guests can sleep at ES Pont?",
-      a: "ES Pont can accommodate the following group size: 8 guests"
+      a: "ES Pont can accommodate the following group size: 12 guests"
     },
     {
       q: "Is there a private pool available to guests staying at ES Pont?",
@@ -1024,7 +1024,7 @@ export const FAQS_TRANSLATIONS: Record<Language, { q: string; a: string }[]> = {
   es: [
     {
       q: "¿Cuántos huéspedes pueden dormir en ES Pont?",
-      a: "ES Pont tiene capacidad para el siguiente tamaño de grupo: 8 huéspedes"
+      a: "ES Pont tiene capacidad para el siguiente tamaño de grupo: 12 huéspedes"
     },
     {
       q: "¿Hay piscina privada disponible para los huéspedes de ES Pont?",
@@ -1070,7 +1070,7 @@ export const FAQS_TRANSLATIONS: Record<Language, { q: string; a: string }[]> = {
   de: [
     {
       q: "Wie viele Gäste können in ES Pont übernachten?",
-      a: "ES Pont bietet Platz für folgende Gruppengröße: 8 Gäste"
+      a: "ES Pont bietet Platz für folgende Gruppengröße: 12 Gäste"
     },
     {
       q: "Gibt es bei ES Pont einen privaten Pool?",
