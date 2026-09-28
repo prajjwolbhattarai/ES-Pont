@@ -118,7 +118,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
         rules:
           language === 'es'
             ? [
-                "Ocupación máxima: 10 huéspedes (ideal para familias y grupos tranquilos)",
+                "Ocupación máxima: 8 huéspedes (ideal para familias y grupos tranquilos)",
                 "Estrictamente prohibidas fiestas, celebraciones o eventos ruidosos",
                 "Se admiten mascotas bajo petición previa con el anfitrión",
                 "Horas de silencio: 23:00 – 08:00 (protocolo vecinal residencial)",
@@ -127,7 +127,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
               ]
             : language === 'de'
             ? [
-                "Maximale Belegung: 10 Gäste (ideal für Familien und ruhige Reisegruppen)",
+                "Maximale Belegung: 8 Gäste (ideal für Familien und ruhige Reisegruppen)",
                 "Partys oder Veranstaltungen sind strengstens untersagt",
                 "Haustiere nach vorheriger Absprache mit dem Gastgeber möglich",
                 "Ruhezeiten: 23:00 – 08:00 Uhr (Protokoll der Wohngegend)",
@@ -158,6 +158,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
         name: trans.name || room.name,
         bedType: trans.bedType || room.bedType,
         capacity: trans.capacity || room.capacity,
+        floor: trans.floor || room.floor,
         description: trans.description || room.description,
         features: trans.features || room.features
       };

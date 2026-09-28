@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, CheckCircle2, Mail, Phone, Loader2, AlertCircle } from 'lucide-react';
+import { X, Send, CheckCircle2, Mail, Loader2, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface HostContactModalProps {
@@ -61,10 +61,10 @@ export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onCl
     } catch {
       setErrorMessage(
         language === 'es'
-          ? 'Error al enviar el mensaje. Por favor, contáctenos directamente por correo o teléfono.'
+          ? 'Error al enviar el mensaje. Por favor, contáctenos directamente por correo electrónico.'
           : language === 'de'
-          ? 'Fehler beim Senden der Anfrage. Bitte kontaktieren Sie uns direkt per E-Mail oder Telefon.'
-          : 'Failed to send inquiry. Please contact us directly by email or phone.'
+          ? 'Fehler beim Senden der Anfrage. Bitte kontaktieren Sie uns direkt per E-Mail.'
+          : 'Failed to send inquiry. Please contact us directly by email.'
       );
     } finally {
       setIsSubmitting(false);
@@ -280,17 +280,12 @@ export const HostContactModal: React.FC<HostContactModalProps> = ({ isOpen, onCl
           )}
 
           {/* Quick Contact Links */}
-          <div className="mt-6 pt-5 border-t border-[#E8E2D8] grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#5C554E] font-sans-clean">
+          <div className="mt-6 pt-5 border-t border-[#E8E2D8] flex items-center justify-center text-xs text-[#5C554E] font-sans-clean">
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#C59B4D] shrink-0" />
-              <a href="mailto:rainer.kaderka@web.de" className="hover:text-[#2D2825] transition-colors truncate">
+              <span>{language === 'es' ? 'Contacto directo por correo:' : language === 'de' ? 'Direkter Kontakt per E-Mail:' : 'Direct host email:'}</span>
+              <a href="mailto:rainer.kaderka@web.de" className="text-[#C59B4D] hover:underline font-medium">
                 rainer.kaderka@web.de
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#C59B4D] shrink-0" />
-              <a href="tel:+491751835942" className="hover:text-[#2D2825] transition-colors">
-                +49 175 1835942
               </a>
             </div>
           </div>

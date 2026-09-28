@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Image as ImageIcon, MapPin, Users, Bed, Bath, Waves, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Calendar, Image as ImageIcon, Users, Bed, Bath, Waves, Sparkles } from 'lucide-react';
 import { EsPontBrandLogo } from './EsPontBrandLogo';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -9,7 +9,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section className="relative min-h-[92vh] lg:min-h-screen flex items-end justify-start overflow-hidden bg-[#2D2825]">
@@ -28,26 +28,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenGallery }) => {
 
       {/* Hero Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-24">
-        {/* Clean Kicker / Location */}
-        <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm tracking-widest uppercase font-medium text-[#EED8B3] mb-3">
-          <MapPin className="w-3.5 h-3.5 text-[#C59B4D]" />
-          <span>{t.hero.locationKicker}</span>
-          <span aria-hidden="true" className="text-[#D5C7B7]">·</span>
-          <span>{t.hero.locationSub}</span>
-          <span aria-hidden="true" className="text-[#D5C7B7]">·</span>
-          <span className="text-[#7CB88F] flex items-center gap-1 font-semibold">
-            <CheckCircle2 className="w-3.5 h-3.5" /> {t.hero.bestPriceBadge}
-          </span>
-        </div>
-
         {/* Property Title with Exact Brand Logo Image */}
-        <div className="mb-5">
-          <div className="mb-2">
+        <div className="mb-6">
+          <div className="mb-3">
             <EsPontBrandLogo size="hero" colorScheme="gold" />
           </div>
-          <span className="text-xs sm:text-sm tracking-[0.25em] font-light text-[#EED8B3] uppercase block font-sans-clean">
-            {t.hero.luxuryTag}
-          </span>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-xs sm:text-sm tracking-[0.25em] font-light text-[#EED8B3] uppercase block font-sans-clean">
+              {t.hero.luxuryTag}
+            </span>
+            <span className="hidden sm:inline text-white/30">·</span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#F2ECE4] text-[11px] font-sans-clean tracking-wider uppercase">
+              <span className="text-[#C59B4D] font-medium">{language === 'es' ? 'Licencia Turística' : language === 'de' ? 'Touristische Lizenz' : 'Tourist Licence'}:</span>
+              <strong className="font-semibold text-white">VT/106136</strong>
+            </span>
+          </div>
         </div>
 
         {/* Subtitle / Value Proposition */}

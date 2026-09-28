@@ -32,7 +32,7 @@ export const TRANSLATIONS = {
       bestPriceBadge: 'Direct Booking Best Price',
       luxuryTag: 'LUXURY PRIVATE ESTATE · SON VIDA, MALLORCA',
       subtitle: 'A private Spanish-style villa in prestigious Son Vida with sweeping views over Palma, the bay and the Cathedral, featuring a 10 × 5 m pool, basketball court and 2,200 m² of secluded grounds.',
-      upTo10: 'Up to 10',
+      upTo10: 'Up to 8',
       guests: 'Guests',
       six: '6',
       bedrooms: 'Bedrooms',
@@ -54,8 +54,8 @@ export const TRANSLATIONS = {
           description: 'Book directly without intermediary service charges or OTA portal markups.'
         },
         {
-          title: 'Contactless Check-In',
-          description: 'Smart encrypted keybox arrival with host assistance whenever needed.'
+          title: 'Personal Host Welcome',
+          description: 'Warm personal greeting upon arrival with key handover, home tour, and local orientation.'
         },
         {
           title: 'Personal Host Contact',
@@ -72,7 +72,7 @@ export const TRANSLATIONS = {
       heading: 'A Secluded Mediterranean Sanctuary',
       subtitle: 'Set within over 2,200 m² of private grounds in Mallorca’s most prestigious residential enclave.',
       metrics: {
-        guests: '10 Guests',
+        guests: '8 Guests',
         guestsLabel: 'Max. Capacity',
         bedrooms: '6 Bedrooms',
         bedroomsLabel: 'Luxury Suites',
@@ -140,11 +140,11 @@ export const TRANSLATIONS = {
     bedrooms: {
       badge: 'Rest & Rejuvenation',
       heading: '6 Bedrooms & 4 Bathrooms',
-      subtitle: 'Designed for deep rest and peaceful silence in residential Son Vida. Accommodating up to 10 guests across 6 private bedrooms with 4 bathrooms, independent climate control, and fresh hotel-grade linens.',
+      subtitle: 'Designed for deep rest and peaceful silence in residential Son Vida. Accommodating up to 8 guests across private bedrooms with 4 bathrooms, independent climate control, and fresh hotel-grade linens.',
       bathroomsHighlightTitle: '4 Full Bathrooms with Rain Showers & Vanities',
       bathroomsHighlightDesc: 'Equipped with modern fittings, high-pressure hot water, organic soaps, plush bath sheets, and dedicated swimming pool towels for all guests.',
-      groupsHighlightTitle: 'Accommodating Groups up to 10 Guests',
-      groupsHighlightDesc: '6 separate bedrooms offering privacy for families or retreat groups, with baby cots and children high chairs prepared complimentary upon request.'
+      groupsHighlightTitle: 'Accommodating Groups up to 8 Guests',
+      groupsHighlightDesc: 'Private bedrooms offering tranquil comfort for families or retreat groups, with baby cots and children high chairs prepared complimentary upon request.'
     },
     booking: {
       badge: 'Direct Host Reservation',
@@ -179,7 +179,7 @@ export const TRANSLATIONS = {
       subtitle: 'Transparent policies ensuring a tranquil, respectful, and well-managed experience for every guest.',
       arrivalTitle: 'Arrival & Departure',
       checkinLabel: 'Check-in Window:',
-      checkinVal: 'From 15:00 onwards (contactless smart keybox or host greeting)',
+      checkinVal: 'From 15:00 onwards (personal host greeting upon arrival)',
       checkoutLabel: 'Check-out:',
       checkoutVal: 'Until 11:00 AM',
       earlyCheckinNote: 'Early check-in or luggage drop-off can be arranged in advance subject to availability.',
@@ -261,7 +261,7 @@ export const TRANSLATIONS = {
       bestPriceBadge: 'Mejor Precio de Reserva Directa',
       luxuryTag: 'FINCA PRIVADA DE LUJO · SON VIDA, MALLORCA',
       subtitle: 'Una villa privada de estilo español en la prestigiosa zona de Son Vida con impresionantes vistas panorámicas de Palma, la bahía y la Catedral, piscina de 10 × 5 m, cancha de baloncesto y 2.200 m² de jardines privados.',
-      upTo10: 'Hasta 10',
+      upTo10: 'Hasta 8',
       guests: 'Huéspedes',
       six: '6',
       bedrooms: 'Dormitorios',
@@ -283,8 +283,8 @@ export const TRANSLATIONS = {
           description: 'Reserve directamente sin recargos de intermediarios ni comisiones de agencias OTA.'
         },
         {
-          title: 'Llegada sin Contacto',
-          description: 'Acceso seguro mediante caja de llaves inteligente con asistencia del anfitrión disponible.'
+          title: 'Bienvenida Personalizada',
+          description: 'Cálido recibimiento personal a la llegada con entrega de llaves, recorrido por la finca y orientación local.'
         },
         {
           title: 'Trato Directo con el Anfitrión',
@@ -301,7 +301,7 @@ export const TRANSLATIONS = {
       heading: 'Un Refugio Mediterráneo Exclusivo y Privado',
       subtitle: 'Ubicada en más de 2.200 m² de jardines privados en la urbanización residencial más prestigiosa de Mallorca.',
       metrics: {
-        guests: '10 Huéspedes',
+        guests: '8 Huéspedes',
         guestsLabel: 'Capacidad Máx.',
         bedrooms: '6 Dormitorios',
         bedroomsLabel: 'Suites de Lujo',
@@ -369,11 +369,11 @@ export const TRANSLATIONS = {
     bedrooms: {
       badge: 'Descanso y Confort',
       heading: '6 Dormitorios y 4 Baños',
-      subtitle: 'Diseñado para el descanso absoluto y el silencio más plácido en la zona residencial de Son Vida. Capacidad para hasta 10 huéspedes en 6 dormitorios privados con 4 baños, aire acondicionado individual y ropa de cama de calidad hotelera.',
+      subtitle: 'Diseñado para el descanso absoluto y el silencio más plácido en la zona residencial de Son Vida. Capacidad para hasta 8 huéspedes en dormitorios privados con 4 baños, aire acondicionado individual y ropa de cama de calidad hotelera.',
       bathroomsHighlightTitle: '4 Baños Completos con Duchas Italianas y Tocadores',
       bathroomsHighlightDesc: 'Equipados con grifería moderna, agua caliente continua, jabones orgánicos, toallas suaves de algodón y toallas exclusivas para la piscina.',
-      groupsHighlightTitle: 'Ideal para Grupos de hasta 10 Huéspedes',
-      groupsHighlightDesc: '6 dormitorios independientes que ofrecen total intimidad para familias o retiros, con cunas y tronas para bebés disponibles de forma gratuita previa solicitud.'
+      groupsHighlightTitle: 'Ideal para Grupos de hasta 8 Huéspedes',
+      groupsHighlightDesc: 'Dormitorios independientes que ofrecen total intimidad para familias o retiros, con cunas y tronas para bebés disponibles de forma gratuita previa solicitud.'
     },
     booking: {
       badge: 'Reserva Directa con el Propietario',
@@ -408,7 +408,7 @@ export const TRANSLATIONS = {
       subtitle: 'Normas transparentes para garantizar una experiencia tranquila, respetuosa y cuidada para cada huésped.',
       arrivalTitle: 'Llegada y Salida',
       checkinLabel: 'Horario de Entrada:',
-      checkinVal: 'A partir de las 15:00 h (caja de llaves inteligente o bienvenida personal)',
+      checkinVal: 'A partir de las 15:00 h (recibimiento personal a la llegada)',
       checkoutLabel: 'Horario de Salida:',
       checkoutVal: 'Hasta las 11:00 h',
       earlyCheckinNote: 'La entrada anticipada o custodia de equipaje se puede coordinar con antelación según disponibilidad.',
@@ -490,7 +490,7 @@ export const TRANSLATIONS = {
       bestPriceBadge: 'Bestpreis bei Direktbuchung',
       luxuryTag: 'EXKLUSIVES PRIVATANWESEN · SON VIDA, MALLORCA',
       subtitle: 'Eine private Villa im spanischen Stil im renommierten Son Vida mit weitem Panoramablick auf Palma, die Bucht und die Kathedrale, privatem 10 × 5 m Pool, Basketballplatz und 2.200 m² uneinsehbarem Grundstück.',
-      upTo10: 'Bis zu 10',
+      upTo10: 'Bis zu 8',
       guests: 'Gäste',
       six: '6',
       bedrooms: 'Schlafzimmer',
@@ -512,8 +512,8 @@ export const TRANSLATIONS = {
           description: 'Buchen Sie direkt ohne Buchungsgebühren oder Aufschläge von Buchungsplattformen.'
         },
         {
-          title: 'Kontaktloser Check-In',
-          description: 'Sichere Anreise per codiertem Schlüsselsafe mit persönlicher Betreuung bei Bedarf.'
+          title: 'Persönlicher Empfang',
+          description: 'Herzlicher persönlicher Empfang bei der Anreise mit Schlüsselübergabe, Rundgang und Einweisung vor Ort.'
         },
         {
           title: 'Persönlicher Kontakt',
@@ -530,7 +530,7 @@ export const TRANSLATIONS = {
       heading: 'Ein privates mediterranes Refugium',
       subtitle: 'Eingebettet in über 2.200 m² privates Grundstück in Mallorcas renommiertester Wohngegend.',
       metrics: {
-        guests: '10 Gäste',
+        guests: '8 Gäste',
         guestsLabel: 'Max. Belegung',
         bedrooms: '6 Schlafzimmer',
         bedroomsLabel: 'Luxuriöse Suiten',
@@ -598,11 +598,11 @@ export const TRANSLATIONS = {
     bedrooms: {
       badge: 'Erholung & Schlafkomfort',
       heading: '6 Schlafzimmer & 4 Badezimmer',
-      subtitle: 'Konzipiert für tiefen Schlaf und vollkommene Ruhe im Wohnviertel Son Vida. Bietet Platz für bis zu 10 Gäste in 6 privaten Schlafzimmern mit 4 Badezimmern, individueller Klimatisierung und frischer Bettwäsche in Hotelqualität.',
+      subtitle: 'Konzipiert für tiefen Schlaf und vollkommene Ruhe im Wohnviertel Son Vida. Bietet Platz für bis zu 8 Gäste in privaten Schlafzimmern mit 4 Badezimmern, individueller Klimatisierung und frischer Bettwäsche in Hotelqualität.',
       bathroomsHighlightTitle: '4 voll ausgestattete Badezimmer mit Regenduschen',
       bathroomsHighlightDesc: 'Modern ausgestattet mit zuverlässigem Warmwasser, biologischen Seifen, weichen Duschtüchern und separaten Poolhandtüchern für alle Gäste.',
-      groupsHighlightTitle: 'Ideal für Reisegruppen bis zu 10 Personen',
-      groupsHighlightDesc: '6 separate Schlafzimmer für maximale Privatsphäre von Familien oder Gruppen. Babybetten und Hochstühle stellen wir auf Wunsch gerne kostenfrei bereit.'
+      groupsHighlightTitle: 'Ideal für Reisegruppen bis zu 8 Personen',
+      groupsHighlightDesc: 'Separate Schlafzimmer für maximale Privatsphäre von Familien oder Gruppen. Babybetten und Hochstühle stellen wir auf Wunsch gerne kostenfrei bereit.'
     },
     booking: {
       badge: 'Direktbuchung beim Eigentümer',
@@ -637,7 +637,7 @@ export const TRANSLATIONS = {
       subtitle: 'Klare und transparente Richtlinien für einen entspannten, respektvollen und angenehmen Aufenthalt.',
       arrivalTitle: 'Anreise & Abreise',
       checkinLabel: 'Check-in:',
-      checkinVal: 'Ab 15:00 Uhr (kontaktloser Schlüsselsafe oder persönlicher Empfang)',
+      checkinVal: 'Ab 15:00 Uhr (persönlicher Empfang bei der Ankunft)',
       checkoutLabel: 'Check-out:',
       checkoutVal: 'Bis 11:00 Uhr',
       earlyCheckinNote: 'Früherer Check-in oder Gepäckaufbewahrung nach vorheriger Absprache und Verfügbarkeit möglich.',
@@ -824,47 +824,47 @@ export const BEDROOMS_TRANSLATIONS: Record<Language, any[]> = {
   en: [
     {
       id: "b1",
-      name: "Bedroom 1 (Master Bedroom)",
-      bedType: "1 King Bed",
-      capacity: "2 Guests",
-      description: "Spacious master suite featuring private balcony access, panoramic views over Son Vida, peaceful ambiance, and direct bathroom access.",
-      features: ["King size bed", "Private balcony access", "Panoramic Son Vida views", "Air conditioning", "Direct bathroom access"]
-    },
-    {
-      id: "b2",
-      name: "Bedroom 2",
+      name: "Bedroom 1 – Paguera",
       bedType: "1 Queen Bed",
       capacity: "2 Guests",
-      description: "Serene bedroom with 1 queen bed, crisp linens, peaceful garden orientation, and ample wardrobe storage.",
+      description: "Serene bedroom with 1 queen bed, crisp linens, peaceful garden orientation, and built-in wardrobe storage.",
       features: ["1 Queen bed", "Garden & mountain hillside view", "Air conditioning", "Built-in wardrobes"]
     },
     {
-      id: "b3",
-      name: "Bedroom 3",
-      bedType: "Twin Beds",
-      capacity: "2 Guests",
-      description: "Versatile bedroom furnished with twin single beds, ideal for guests, children, or friends.",
-      features: ["Twin single beds", "Quiet garden orientation", "Reading lamps", "Air conditioning"]
-    },
-    {
-      id: "b4",
-      name: "Bedroom 4",
+      id: "b2",
+      name: "Bedroom 2 – Andratx",
       bedType: "1 Queen Bed",
       capacity: "2 Guests",
-      description: "Restful bedroom suite with individual climate control, queen bedding, and tranquil garden views.",
+      description: "Restful bedroom suite with queen bedding, individual climate control, and tranquil garden views.",
       features: ["1 Queen bed", "Individual climate control", "Garden orientation", "Wardrobe space"]
     },
     {
+      id: "b3",
+      name: "Bedroom 3 – Palma (Master Bedroom)",
+      bedType: "1 King Bed",
+      capacity: "2 Guests",
+      description: "Spacious master bedroom suite featuring private balcony access, sweeping panoramic views over Son Vida, peaceful ambiance, and direct bathroom access.",
+      features: ["1 King bed", "Private balcony access", "Panoramic Son Vida views", "Air conditioning", "Direct bathroom access"]
+    },
+    {
+      id: "b4",
+      name: "Bedroom 4 – Andratx",
+      bedType: "Twin Beds",
+      capacity: "2 Guests",
+      description: "Versatile bedroom furnished with twin single beds, ideal for guests, children, or friends, with reading lights and garden views.",
+      features: ["Twin single beds", "Quiet garden orientation", "Reading lamps", "Air conditioning"]
+    },
+    {
       id: "b5",
-      name: "Bedroom 5",
+      name: "Bedroom 5 – Manacor",
       bedType: "1 Double Bed",
       capacity: "2 Guests",
-      description: "Bright double bedroom offering quiet privacy and natural daylight.",
+      description: "Bright double bedroom offering quiet privacy, natural daylight, and garden orientation.",
       features: ["1 Double bed", "Natural daylight", "Air conditioning", "Adjacent bathroom access"]
     },
     {
       id: "b6",
-      name: "Bedroom 6",
+      name: "Bedroom 6 – Palma",
       bedType: "Twin Beds (or Double setup)",
       capacity: "2 Guests",
       description: "Inviting bedroom with twin beds (configurable as a double bed), comfortable bedding, and quiet ambiance.",
@@ -874,47 +874,47 @@ export const BEDROOMS_TRANSLATIONS: Record<Language, any[]> = {
   es: [
     {
       id: "b1",
-      name: "Dormitorio 1 (Dormitorio Principal)",
-      bedType: "1 Cama King",
-      capacity: "2 Huéspedes",
-      description: "Espaciosa suite principal con acceso a balcón privado, vistas panorámicas de Son Vida, atmósfera de tranquilidad y acceso directo al baño.",
-      features: ["Cama King size", "Acceso a balcón privado", "Vistas panorámicas a Son Vida", "Aire acondicionado", "Acceso directo a baño"]
-    },
-    {
-      id: "b2",
-      name: "Dormitorio 2",
+      name: "Dormitorio 1 – Paguera",
       bedType: "1 Cama Queen",
       capacity: "2 Huéspedes",
-      description: "Sereno dormitorio con cama queen, sábanas de alta calidad, tranquila orientación al jardín y amplios armarios empotrados.",
+      description: "Sereno dormitorio con cama queen, sábanas de alta calidad, armarios empotrados y atmósfera de total tranquilidad.",
       features: ["1 Cama Queen", "Vistas al jardín y la montaña", "Aire acondicionado", "Armarios empotrados"]
     },
     {
-      id: "b3",
-      name: "Dormitorio 3",
-      bedType: "Dos Camas Individuales (Twin)",
-      capacity: "2 Huéspedes",
-      description: "Versátil dormitorio equipado con dos camas individuales, perfecto para acompañantes, niños o amigos.",
-      features: ["Dos camas individuales", "Orientación tranquila al jardín", "Lámparas de lectura", "Aire acondicionado"]
-    },
-    {
-      id: "b4",
-      name: "Dormitorio 4",
+      id: "b2",
+      name: "Dormitorio 2 – Andratx",
       bedType: "1 Cama Queen",
       capacity: "2 Huéspedes",
-      description: "Acogedora suite con climatización individual, cama queen y vistas relajantes al jardín.",
+      description: "Acogedora suite con climatización individual, cama queen y vistas relajantes a los jardines privados.",
       features: ["1 Cama Queen", "Climatización individual", "Orientación al jardín", "Espacio de armario"]
     },
     {
+      id: "b3",
+      name: "Dormitorio 3 – Palma (Dormitorio Principal)",
+      bedType: "1 Cama King",
+      capacity: "2 Huéspedes",
+      description: "Espaciosa suite principal con acceso a balcón privado, espectaculares vistas panorámicas de Son Vida y acceso directo al baño.",
+      features: ["1 Cama King", "Balcón privado panorámico", "Vistas panorámicas a Son Vida", "Aire acondicionado", "Acceso directo a baño"]
+    },
+    {
+      id: "b4",
+      name: "Dormitorio 4 – Andratx",
+      bedType: "Dos Camas Individuales (Twin)",
+      capacity: "2 Huéspedes",
+      description: "Versátil dormitorio equipado con dos camas individuales, perfecto para acompañantes, niños o amigos, con vistas al jardín.",
+      features: ["Dos camas individuales", "Orientación tranquila al jardín", "Lámparas de lectura", "Aire acondicionado"]
+    },
+    {
       id: "b5",
-      name: "Dormitorio 5",
+      name: "Dormitorio 5 – Manacor",
       bedType: "1 Cama Doble",
       capacity: "2 Huéspedes",
-      description: "Luminoso dormitorio doble con total intimidad, silencio y abundante luz natural.",
-      features: ["1 Cama doble", "Luz natural exterior", "Aire acondicionado", "Acceso adyacente al baño"]
+      description: "Luminoso dormitorio doble con total intimidad, luz natural y ambiente apacible.",
+      features: ["1 Cama doble", "Luz natural exterior", "Aire acondicionado", "Acceso contiguo a baño"]
     },
     {
       id: "b6",
-      name: "Dormitorio 6",
+      name: "Dormitorio 6 – Palma",
       bedType: "Dos Camas (o Doble)",
       capacity: "2 Huéspedes",
       description: "Confortable dormitorio con dos camas (modulables como cama doble), ropa de cama de calidad y ambiente tranquilo.",
@@ -924,39 +924,39 @@ export const BEDROOMS_TRANSLATIONS: Record<Language, any[]> = {
   de: [
     {
       id: "b1",
-      name: "Schlafzimmer 1 (Hauptschlafzimmer)",
-      bedType: "1 King-Size-Bett",
-      capacity: "2 Gäste",
-      description: "Großzügige Mastersuite mit privatem Balkonzugang, weitem Panoramablick über Son Vida, herrlicher Ruhe und direktem Badezimmerzugang.",
-      features: ["King-Size-Doppelbett", "Eigener Balkonzugang", "Panoramablick auf Son Vida", "Klimaanlage", "Direkter Badezimmerzugang"]
-    },
-    {
-      id: "b2",
-      name: "Schlafzimmer 2",
+      name: "Schlafzimmer 1 – Paguera",
       bedType: "1 Queen-Size-Bett",
       capacity: "2 Gäste",
-      description: "Ruhiges Schlafzimmer mit Queen-Size-Bett, feiner Bettwäsche, Gartenblick und großzügigen Einbauschränken.",
+      description: "Ruhiges Schlafzimmer mit Queen-Bett, Blick in den Garten, feiner Bettwäsche und großzügigen Einbauschränken.",
       features: ["1 Queen-Size-Bett", "Garten- und Hügelblick", "Klimaanlage", "Einbauschränke"]
     },
     {
-      id: "b3",
-      name: "Schlafzimmer 3",
-      bedType: "2 Einzelbetten (Twin)",
-      capacity: "2 Gäste",
-      description: "Flexibles Schlafzimmer mit zwei bequemen Einzelbetten, ideal für Gäste, Kinder oder Freunde.",
-      features: ["Zwei Einzelbetten", "Ruhige Gartenausrichtung", "Leselampen", "Klimaanlage"]
-    },
-    {
-      id: "b4",
-      name: "Schlafzimmer 4",
+      id: "b2",
+      name: "Schlafzimmer 2 – Andratx",
       bedType: "1 Queen-Size-Bett",
       capacity: "2 Gäste",
       description: "Erholsame Schlafsuite mit individueller Klimatisierung, Queen-Bett und friedlichem Blick ins Grüne.",
       features: ["1 Queen-Size-Bett", "Individuelle Klimatisierung", "Gartenausrichtung", "Geräumiger Kleiderschrank"]
     },
     {
+      id: "b3",
+      name: "Schlafzimmer 3 – Palma (Hauptschlafzimmer)",
+      bedType: "1 King-Size-Bett",
+      capacity: "2 Gäste",
+      description: "Großzügige Mastersuite mit privatem Balkonzugang, weitem Panoramablick über Son Vida, herrlicher Ruhe und direktem Badezimmerzugang.",
+      features: ["1 King-Size-Bett", "Eigener Balkonzugang", "Panoramablick auf Son Vida", "Klimaanlage", "Direkter Badezimmerzugang"]
+    },
+    {
+      id: "b4",
+      name: "Schlafzimmer 4 – Andratx",
+      bedType: "2 Einzelbetten (Twin)",
+      capacity: "2 Gäste",
+      description: "Flexibles Schlafzimmer mit zwei bequemen Einzelbetten, ideal für Gäste, Kinder oder Freunde, mit Gartenblick.",
+      features: ["Zwei Einzelbetten", "Ruhige Gartenausrichtung", "Leselampen", "Klimaanlage"]
+    },
+    {
       id: "b5",
-      name: "Schlafzimmer 5",
+      name: "Schlafzimmer 5 – Manacor",
       bedType: "1 Doppelbett",
       capacity: "2 Gäste",
       description: "Helles Doppelzimmer mit viel Privatsphäre, Ruhe und natürlichem Tageslicht.",
@@ -964,7 +964,7 @@ export const BEDROOMS_TRANSLATIONS: Record<Language, any[]> = {
     },
     {
       id: "b6",
-      name: "Schlafzimmer 6",
+      name: "Schlafzimmer 6 – Palma",
       bedType: "Twin-Betten (oder Doppelbett)",
       capacity: "2 Gäste",
       description: "Gemütliches Schlafzimmer mit zwei Einzelbetten (als Doppelbett kombinierbar), hochwertigen Matratzen und ruhiger Atmosphäre.",
@@ -978,7 +978,7 @@ export const FAQS_TRANSLATIONS: Record<Language, { q: string; a: string }[]> = {
   en: [
     {
       q: "How many guests can sleep at ES Pont?",
-      a: "ES Pont can accommodate the following group size: 10 guests"
+      a: "ES Pont can accommodate the following group size: 8 guests"
     },
     {
       q: "Is there a private pool available to guests staying at ES Pont?",
@@ -1024,7 +1024,7 @@ export const FAQS_TRANSLATIONS: Record<Language, { q: string; a: string }[]> = {
   es: [
     {
       q: "¿Cuántos huéspedes pueden dormir en ES Pont?",
-      a: "ES Pont tiene capacidad para el siguiente tamaño de grupo: 10 huéspedes"
+      a: "ES Pont tiene capacidad para el siguiente tamaño de grupo: 8 huéspedes"
     },
     {
       q: "¿Hay piscina privada disponible para los huéspedes de ES Pont?",
@@ -1070,7 +1070,7 @@ export const FAQS_TRANSLATIONS: Record<Language, { q: string; a: string }[]> = {
   de: [
     {
       q: "Wie viele Gäste können in ES Pont übernachten?",
-      a: "ES Pont bietet Platz für folgende Gruppengröße: 10 Gäste"
+      a: "ES Pont bietet Platz für folgende Gruppengröße: 8 Gäste"
     },
     {
       q: "Gibt es bei ES Pont einen privaten Pool?",
@@ -1286,7 +1286,7 @@ export const AMENITIES_TRANSLATIONS: Record<Language, Record<string, { name: str
     pf3: { name: "Gym", description: "Fitness facilities and basketball court on premises" },
     s1: { name: "Pets allowed", description: "Assistance animals are always allowed" },
     s2: { name: "Smoking allowed", description: "Permitted in designated outdoor areas" },
-    s3: { name: "Host greets you", description: "Personal warm greeting on arrival or flexible smart lock access" }
+    s3: { name: "Host greets you", description: "Personal warm greeting and key handover upon arrival by your host" }
   },
   es: {
     v1: { name: "Vistas al perfil de la ciudad", description: "Amplia perspectiva panorámica sobre el horizonte histórico de Palma" },
@@ -1321,7 +1321,7 @@ export const AMENITIES_TRANSLATIONS: Record<Language, Record<string, { name: str
     pf3: { name: "Gimnasio y pista de baloncesto", description: "Instalaciones de fitness y cancha de baloncesto privada" },
     s1: { name: "Mascotas permitidas", description: "Se admiten animales de asistencia y mascotas bajo petición previa" },
     s2: { name: "Zona fumadores exterior", description: "Permitido en las zonas exteriores designadas" },
-    s3: { name: "Bienvenida por el anfitrión", description: "Recepción personalizada a la llegada o acceso autónomo con llave inteligente" }
+    s3: { name: "Bienvenida por el anfitrión", description: "Cálido recibimiento personal y entrega de llaves a la llegada por parte del anfitrión" }
   },
   de: {
     v1: { name: "Blick auf die Skyline der Stadt", description: "Weite Panoramasicht auf die historische Altstadt von Palma" },
@@ -1356,6 +1356,6 @@ export const AMENITIES_TRANSLATIONS: Record<Language, Record<string, { name: str
     pf3: { name: "Fitness & Basketballplatz", description: "Fitnessgeräte und privater Basketballplatz auf dem Grundstück" },
     s1: { name: "Haustiere erlaubt", description: "Assistenztiere und Haustiere nach vorheriger Absprache willkommen" },
     s2: { name: "Rauchen im Freien gestattet", description: "In gekennzeichneten Außenbereichen gestattet" },
-    s3: { name: "Persönlicher Empfang", description: "Persönliche Schlüsselübergabe oder flexibler kontaktloser Zugang per Smart Keybox" }
+    s3: { name: "Persönlicher Empfang", description: "Persönliche Schlüsselübergabe und herzlicher Empfang bei der Anreise durch den Gastgeber" }
   }
 };

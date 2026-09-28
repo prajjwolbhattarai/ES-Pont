@@ -15,7 +15,7 @@ export const PROPERTY_DATA: PropertyDetails = {
     },
   },
   metrics: {
-    guests: 10,
+    guests: 8,
     bedrooms: 6,
     bathrooms: 4,
     beds: 6,
@@ -26,7 +26,7 @@ export const PROPERTY_DATA: PropertyDetails = {
   licenseNumber: "VT/106136",
   description: {
     summary:
-      "Es Pont is a private Spanish-style villa in the prestigious residential area of Son Vida, with sweeping views over Palma, the bay and the Cathedral. Set within more than 2,200 m² of secluded grounds, the property offers 6 bedrooms, 4 bathrooms, a 10 x 5 m pool, mature Mediterranean gardens, elegant outdoor living and a private basketball court. A peaceful retreat of character and privacy, only minutes from Palma.",
+      "Es Pont is a private Spanish-style villa in the prestigious residential area of Son Vida, with sweeping views over Palma, the bay and the Cathedral. Set within more than 2,200 m² of secluded grounds, the property offers 6 bedrooms, 4 bathrooms, a 10 x 5 m pool, mature Mediterranean gardens, elegant outdoor living and a private basketball court. A peaceful retreat of character and privacy accommodating up to 8 guests, only minutes from Palma.",
     longDescription: [
       "The villa combines authentic Mediterranean character with generous indoor and outdoor living. Guests can enjoy several terraces, a fully equipped kitchen, air conditioning, high-speed Wi-Fi, free parking, a barbecue area and a beautifully landscaped garden designed for privacy and relaxation.",
       "Guests have access to the entire villa and its outdoor areas, including the pool, terraces, gardens, barbecue area and basketball court. The property is private and intended for a peaceful and comfortable stay.",
@@ -47,13 +47,13 @@ export const PROPERTY_DATA: PropertyDetails = {
     ]
   },
   policies: {
-    checkIn: "16:00 – 24:00 (Self check-in or personal host greeting)",
+    checkIn: "16:00 – 24:00 (Personal host greeting upon arrival)",
     checkOut: "Until 10:00 AM",
     deposit: "€500 refundable security deposit (reimbursed upon departure inspection)",
     ecoTax: "Balearic Sustainable Tourism Tax (Ecotasa) €2.20 per adult per night",
     cancellation: "Direct booking flexible cancellation policy: Full refund up to 14 days prior to arrival",
     rules: [
-      "Maximum occupancy: 10 guests (suitable for families and mature groups)",
+      "Maximum occupancy: 8 guests (suitable for families and mature groups)",
       "Strictly no parties or events permitted",
       "Pets may be accepted upon prior request with host",
       "Quiet hours: 23:00 – 08:00 (residential neighborhood protocol)",
@@ -448,63 +448,63 @@ export const AMENITIES_LIST: Amenity[] = [
   // Services
   { id: "s1", name: "Pets allowed", category: "services", categoryTitle: "Services", icon: "CheckCircle", description: "Assistance animals are always allowed" },
   { id: "s2", name: "Smoking allowed", category: "services", categoryTitle: "Services", icon: "CheckCircle", description: "Permitted in designated outdoor areas" },
-  { id: "s3", name: "Host greets you", category: "services", categoryTitle: "Services", icon: "UserCheck", description: "Personal warm greeting on arrival or flexible smart lock access" }
+  { id: "s3", name: "Host greets you", category: "services", categoryTitle: "Services", icon: "UserCheck", description: "Personal warm greeting and key handover upon arrival by your host" }
 ];
 
 export const BEDROOMS_LIST: BedroomInfo[] = [
   {
     id: "b1",
-    name: "Bedroom 1 (Master Bedroom)",
-    bedType: "1 King Bed",
-    capacity: "2 Guests",
-    description: "Spacious master suite featuring private balcony access, panoramic views over Son Vida, peaceful ambiance, and direct bathroom access.",
-    features: ["King size bed", "Private balcony access", "Panoramic Son Vida views", "Air conditioning", "Direct bathroom access"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/18221ce2-e8c1-4093-afca-b3bf1c5c4df2.png" // Image 23 (Private balcony view)
-  },
-  {
-    id: "b2",
-    name: "Bedroom 2",
+    name: "Bedroom 1 – Paguera",
     bedType: "1 Queen Bed",
     capacity: "2 Guests",
-    description: "Serene bedroom with 1 queen bed, crisp linens, peaceful garden orientation, and ample wardrobe storage.",
+    description: "Serene bedroom with 1 queen bed, crisp linens, peaceful garden orientation, and built-in wardrobe storage.",
     features: ["1 Queen bed", "Garden & mountain hillside view", "Air conditioning", "Built-in wardrobes"],
     imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/7907a0fd-05a9-42fb-8f8c-fbbee9e0d632.png" // Image 20
   },
   {
-    id: "b3",
-    name: "Bedroom 3",
-    bedType: "Twin Beds",
-    capacity: "2 Guests",
-    description: "Versatile bedroom furnished with twin single beds, ideal for guests, children, or friends.",
-    features: ["Twin single beds", "Quiet garden orientation", "Reading lamps", "Air conditioning"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/3facf5df-5788-4104-a53f-c3d5ab16ba53.png" // Image 27
-  },
-  {
-    id: "b4",
-    name: "Bedroom 4",
+    id: "b2",
+    name: "Bedroom 2 – Andratx",
     bedType: "1 Queen Bed",
     capacity: "2 Guests",
-    description: "Restful bedroom suite with individual climate control, queen bedding, and tranquil garden views.",
+    description: "Restful bedroom suite with queen bedding, individual climate control, and tranquil garden views.",
     features: ["1 Queen bed", "Individual climate control", "Garden orientation", "Wardrobe space"],
     imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/c00ad4b1-9a76-412d-aaa2-0083c8720b10.png" // Image 21
   },
   {
+    id: "b3",
+    name: "Bedroom 3 – Palma (Master Bedroom)",
+    bedType: "1 King Bed",
+    capacity: "2 Guests",
+    description: "Spacious master bedroom suite featuring private balcony access, sweeping panoramic views over Son Vida, peaceful ambiance, and direct bathroom access.",
+    features: ["1 King bed", "Private balcony access", "Panoramic Son Vida views", "Air conditioning", "Direct bathroom access"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/18221ce2-e8c1-4093-afca-b3bf1c5c4df2.png" // Image 23 (Private balcony view)
+  },
+  {
+    id: "b4",
+    name: "Bedroom 4 – Andratx",
+    bedType: "Twin Beds",
+    capacity: "2 Guests",
+    description: "Versatile bedroom furnished with twin single beds, ideal for guests, children, or friends, with reading lights and garden views.",
+    features: ["Twin single beds", "Quiet garden orientation", "Reading lamps", "Air conditioning"],
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/3facf5df-5788-4104-a53f-c3d5ab16ba53.png" // Image 27
+  },
+  {
     id: "b5",
-    name: "Bedroom 5",
+    name: "Bedroom 5 – Manacor",
     bedType: "1 Double Bed",
     capacity: "2 Guests",
-    description: "Bright double bedroom offering quiet privacy and natural daylight.",
+    description: "Bright double bedroom offering quiet privacy, natural daylight, and garden orientation.",
     features: ["1 Double bed", "Natural daylight", "Air conditioning", "Adjacent bathroom access"],
     imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/0ef8fa43-e4e7-433c-8cbf-e91f2080eb7c.png" // Image 26
   },
   {
     id: "b6",
-    name: "Bedroom 6",
+    name: "Bedroom 6 – Palma",
     bedType: "Twin Beds (or Double setup)",
     capacity: "2 Guests",
     description: "Inviting bedroom with twin beds (configurable as a double bed), comfortable bedding, and quiet ambiance.",
     features: ["Twin Beds / Double setup", "Comfortable mattresses", "Fresh cotton linens", "High-speed Wi-Fi access"],
-    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/55e9a1c2-2f02-435b-838e-ce467ad23e15.jpeg" // Image 4 / 24
+    imageUrl: "https://a0.muscache.com/im/pictures/hosting/Hosting-1755000796983746698/original/55e9a1c2-2f02-435b-838e-ce467ad23e15.jpeg" // Image 4
   }
 ];
 
@@ -560,9 +560,9 @@ export const DIRECT_BOOKING_PERKS = [
     description: "Book directly without intermediary service charges or OTA portal markups."
   },
   {
-    title: "Contactless Check-In",
-    desc: "Smart encrypted keybox arrival with host assistance whenever needed.",
-    description: "Smart encrypted keybox arrival with host assistance whenever needed."
+    title: "Personal Host Welcome",
+    desc: "Warm personal greeting upon arrival with key handover, home tour, and local orientation.",
+    description: "Warm personal greeting upon arrival with key handover, home tour, and local orientation."
   },
   {
     title: "Personal Host Contact",

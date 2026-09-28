@@ -29,10 +29,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenContact }) 
         ? '2. Buchung & Bestätigung: Eine Buchung ist nach Bestätigung über unser Direktbuchungssystem (Smoobu) und erfolgter Zahlung verbindlich. Direktbuchungen garantieren den günstigsten Tarif.'
         : '2. Booking & Confirmation: A booking is binding upon confirmation via our direct booking engine (Smoobu) and completion of payment. Direct bookings guarantee the lowest published direct rate.',
       p3: language === 'es'
-        ? '3. Ocupación Máxima y Normas: La villa acoge un máximo de 10 huéspedes en 6 dormitorios. Quedan estrictamente prohibidas fiestas ruidosas o despedidas de soltero para preservar la tranquilidad residencial de Son Vida. Horas de silencio: 23:00 a 08:00.'
+        ? '3. Ocupación Máxima y Normas: La villa acoge un máximo de 8 huéspedes en dormitorios privados. Quedan estrictamente prohibidas fiestas ruidosas o despedidas de soltero para preservar la tranquilidad residencial de Son Vida. Horas de silencio: 23:00 a 08:00.'
         : language === 'de'
-        ? '3. Maximale Belegung & Hausregeln: Die Villa beherbergt maximal 10 Gäste in 6 Schlafzimmern. Junggesellenabschiede oder laute Partys sind untersagt. Ruhezeiten: 23:00 bis 08:00 Uhr.'
-        : '3. Maximum Occupancy & House Rules: The villa accommodates a maximum group size of 10 guests across 6 bedrooms. Stag, hen, or unauthorized loud party groups are strictly prohibited to respect the residential tranquillity of Son Vida. Quiet hours are 23:00 to 08:00.',
+        ? '3. Maximale Belegung & Hausregeln: Die Villa beherbergt maximal 8 Gäste in privaten Schlafzimmern. Junggesellenabschiede oder laute Partys sind untersagt. Ruhezeiten: 23:00 bis 08:00 Uhr.'
+        : '3. Maximum Occupancy & House Rules: The villa accommodates a maximum group size of 8 guests across private bedrooms. Stag, hen, or unauthorized loud party groups are strictly prohibited to respect the residential tranquillity of Son Vida. Quiet hours are 23:00 to 08:00.',
       p4: language === 'es'
         ? '4. Cancelación y Fianza: Reembolso íntegro del 100% para cancelaciones realizadas hasta 14 días antes de la llegada. Se solicita un depósito de seguridad reembolsable de 500 € a la llegada.'
         : language === 'de'
@@ -201,12 +201,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenContact }) 
                 <Mail className="w-4 h-4 text-[#C59B4D] shrink-0" />
                 <a href="mailto:rainer.kaderka@web.de" className="hover:text-[#2D2825] transition-colors">
                   rainer.kaderka@web.de
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#C59B4D] shrink-0" />
-                <a href="tel:+491751835942" className="hover:text-[#2D2825] transition-colors">
-                  +49 175 1835942
                 </a>
               </div>
               <div className="pt-2">

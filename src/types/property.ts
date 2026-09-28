@@ -23,6 +23,7 @@ export interface BedroomInfo {
   name: string;
   bedType: string;
   capacity: string;
+  floor?: string;
   description: string;
   features: string[];
   imageUrl: string;

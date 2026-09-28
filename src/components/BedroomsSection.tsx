@@ -41,6 +41,12 @@ export const BedroomsSection: React.FC = () => {
                 <div className="absolute top-3 left-3 bg-[#2D2825]/80 backdrop-blur-xs text-white text-[11px] font-semibold px-3 py-1 rounded-full font-sans-clean">
                   {room.capacity}
                 </div>
+                {room.name.includes('Master') && (
+                  <div className="absolute top-3 right-3 bg-[#C59B4D] text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-full font-sans-clean shadow-xs flex items-center gap-1">
+                    <Sparkles className="w-3 h-3" />
+                    <span>Master Suite</span>
+                  </div>
+                )}
               </div>
 
               {/* Bedroom Details */}
